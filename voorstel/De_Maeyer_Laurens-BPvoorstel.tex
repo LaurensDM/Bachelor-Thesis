@@ -20,10 +20,10 @@
 % \course{Bachelor thesis}
 % \assignmenttype{Research proposal}
 
-\academicyear{2022-2023} % TODO: pas het academiejaar aan
+\academicyear{2023-2024} % TODO: pas het academiejaar aan
 
 % TODO: Werktitel
-\title{Welke combinatie van open apis is optimaal om erin te slagen bij het genereren van een route voor loopfanaten, waarbij specifieke gebruikersvoorkeuren zoals gewenste hoogtemeters, afstand, types ondergrond, omgeving en startradius worden geïntegreerd?}
+\title{Hoe kunnen online tools gecombineerd worden om een persoonaliseerbare routeapp te ontwikkelen voor loopfanaten, en welke combinatie van deze tools is hiervoor optimaal?}
 
 % TODO: Studentnaam en emailadres invullen
 \author{Laurens De Maeyer}
@@ -36,7 +36,7 @@
 % \email{yasmine.alaoui@student.hogent.be}
 
 % TODO: Geef de co-promotor op
-\supervisor[Co-promotor]{Manu De Buck (we are technology bv, \href{mailto:manu@we-are.be}{manu@we-are.be}), Guillaume Vande Maele (we are technology bv, \href{mailto:guillaume@we-are.be}{guillaume@we-are.be})}
+\supervisor[Co-promotor]{Manu De Buck (we are technology bv, \href{mailto:manu@we-are.be}{manu@we-are.be})}
 
 % Binnen welke specialisatierichting uit 3TI situeert dit onderzoek zich?
 % Kies uit deze lijst:
@@ -50,12 +50,17 @@
 %   zelf
 %
 \specialisation{Mobile \& Enterprise development}
-\keywords{API, route generation, node.js, React Native}
+\keywords{API, node.js, React Native, loopfanaten, routeapp, persoonaliseerbaar}
 
 \begin{document}
 
 \begin{abstract}
-  Hier schrijf je de samenvatting van je voorstel, als een doorlopende tekst van één paragraaf. Let op: dit is geen inleiding, maar een samenvattende tekst van heel je voorstel met inleiding (voorstelling, kaderen thema), probleemstelling en centrale onderzoeksvraag, onderzoeksdoelstelling (wat zie je als het concrete resultaat van je bachelorproef?), voorgestelde methodologie, verwachte resultaten en meerwaarde van dit onderzoek (wat heeft de doelgroep aan het resultaat?).
+  Dit onderzoek concentreert zich op het verzamelen van diverse online tools, in de vorm van gratis open API's, met als doel ze te integreren in een kosteloze route-app voor loopfanaten. Een API, oftewel een interface, maakt communicatie tussen verschillende applicaties mogelijk.
+  Er zijn al verschillende routeapps beschikbaar voor lopers, maar deze bieden niet altijd de mogelijkheid om een route te genereren op basis van verschillende parameters. In sommige gevallen zijn deze functies alleen toegankelijk via een betalende versie van de app.
+  Er wordt onderzocht welke publieke API's er beschikbaar zijn om routes te genereren en welke combinatie van deze API's het meest geschikt is voor het genereren van routes voor loopfanaten. Ook wordt er onderzoek gedaan naar populair route-apps en welke functies deze aanbieden.
+  Een proof of concept zal worden ontworpen, waarmee gebruikers routes kunnen genereren op basis van diverse parameters zoals de afstand, het aantal hoogtemeters, types ondergrond, startradius \ldots. Bovendien kan een weersverwachting opgevraagd worden voor de gekozen route.
+  Deze proof of concept wordt ontwikkeld in React Native, met een node.js backend, waar de verschillende API's in geïntegreerd worden. De applicatie zal beschikbaar zijn op zowel Android- als iOS-systemen.
+  Ten slotte wordt een kostprijsonderzoek uitgevoerd om de haalbaarheid van de lancering en het onderhoud van de applicatie te beoordelen.
 \end{abstract}
 
 \tableofcontents
