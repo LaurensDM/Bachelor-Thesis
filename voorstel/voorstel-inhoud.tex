@@ -6,10 +6,11 @@
 In de moderne wereld, waarin technologie steeds belangrijker wordt, is het niet meer dan normaal dat er ook technologie bestaat voor sporters. Zo zijn er al verschillende apps beschikbaar voor lopers, zoals Strava, Runkeeper en Nike Run Club.
 Deze apps bieden de mogelijkheid om routes te genereren op basis van verschillende parameters, zoals afstand, locatie en moeilijkheidsgraad. Deze functies zijn echter niet altijd toegankelijk via de gratis versie van de app. 
 In sommige gevallen moet er een abonnement worden afgesloten om gebruik te kunnen maken van deze functies. Een API, oftewel een interface, maakt communicatie tussen verschillende applicaties mogelijk.
-Welke API's zijn er beschikbaar om routes te genereren? Welke combinatie van deze API's is het meest geschikt voor het genereren van routes voor loopfanaten? Welke functies bieden populaire route-apps aan? Welke parameters willen loopfanaten aan een route koppelen? Dit zijn de vragen die in dit onderzoek beantwoord zullen worden.
-Dit onderzoek concentreert zich op het verzamelen van diverse online tools, in de vorm van gratis open API's, met als doel ze te integreren in een kosteloze route-app voor loopfanaten. 
+Welke publieke, en gratis, API's zijn er beschikbaar om routes te genereren? Welke combinatie van deze API's is het meest geschikt voor het genereren van routes voor loopfanaten? Welke functies bieden populaire route-apps aan? Welke parameters willen loopfanaten aan een route koppelen? Dit zijn de vragen die in dit onderzoek beantwoord zullen worden.
+Dit onderzoek concentreert zich op het verzamelen van diverse online tools voor het genereren van een route, in de vorm van gratis open API's, met als doel ze te integreren in een kosteloze route-app voor loopfanaten. 
 Om dit te realiseren zal er een proof of concept ontwikkeld worden die gebruik maakt van de gekozen API's. De applicatie zal ontwikkeld worden in React Native en Node.js. React Native is een framework dat het mogelijk maakt om native apps te ontwikkelen voor Android en iOS\@. Node.js is een JavaScript runtime die het mogelijk maakt om JavaScript code te schrijven buiten de browser.
-Deze proof of concept zal beschikbaar zijn op zowel Android- als iOS-systemen.
+Deze proof of concept zal beschikbaar zijn op zowel Android- als iOS-systemen. Weinig zaken zijn effectief gratis, daarom zal er ook een kostenanalyse uitgevoerd worden om de haalbaarheid van de lancering en het onderhoud van de applicatie te beoordelen. 
+Verder zullen er mogelijkheden onderzocht worden om deze kosten te dekken, zoals het toevoegen van advertenties.
 
 
 %---------- Stand van zaken ---------------------------------------------------
@@ -17,15 +18,30 @@ Deze proof of concept zal beschikbaar zijn op zowel Android- als iOS-systemen.
 \section{State-of-the-art}%
 \label{sec:state-of-the-art}
 
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
+De voortdurende vooruitgang in digitale technologieën heeft geleid tot een overvloed aan online hulpmiddelen en toepassingen, waaronder diverse apps voor het begeleiden van fysieke activiteiten. 
+Deze sectie over de huidige stand van zaken onderzoekt de integratie van online hulpmiddelen voor de ontwikkeling van kosteloze, op maat gemaakte route-applicaties.
 
-Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
+\subsection{Populaire apps voor lopers}
+Er bestaan reeds verschillende applicaties voor lopers. Enkele populaire apps zijn: Runna, Strava, Nike Run Club, Map My Run by Under Armour, Runkeeper, Peloton, Stride, Apple Fitness Plus en anderen \autocite{Downey2023}.
+Uit deze lijst van zogezegde "beste" apps voor lopers, is er geen enkele app die volledig gratis is \emph{en} een route kan genereren op basis van verschillende parameters.
+Echter hebben deze apps wel andere interessante functies, zoals het bijhouden van statistieken, het delen van routes met andere gebruikers, het aanmaken van groepen, het volgen van andere gebruikers, het aanmaken van een trainingsschema \ldots
 
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
 
-Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
+\subsection{API's voor het genereren van routes}
+Er zijn verschillende API's beschikbaar voor het genereren van routes. Enkele voorbeelden zijn: Google Maps, Geoapify, Openrouteservice, Mapbox, OpenRouteService, Here, GraphHopper \ldots 
+Deze API's zijn allemaal gratis te gebruiken, maar hebben een limiet voor het aantal requests per dag of per maand, of bieden minder functies in de gratis versie. De limiet verschilt per API, maar is meestal voldoende voor een applicatie die nog in ontwikkeling is.
+Elke API heeft zijn eigen voor- en nadelen. Zo is Google Maps een zeer populaire API, maar is het niet mogelijk om een route te genereren op basis van het aantal hoogtemeters.
 
-Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
+\subsection{API's voor het opvragen van weersverwachtingen}
+Er zijn verschillende API's beschikbaar voor het opvragen van weersverwachtingen. Enkele voorbeelden zijn: OpenWeather, Weather API, Weatherbit, Weatherstack \ldots
+Zoals bij de API's voor het genereren van routes, zijn deze API's ook gratis te gebruiken, maar hebben ze wel een limiet op het aantal requests per dag of per maand, of hebben ze minder features voor een gratis versie.
+Voor een simpele weersverwachting is \emph{één} van deze API's voldoende, Weather API bevat de meeste features, dus deze zou zeker geschikt zijn. Voor meer features zoals zonsondergang, zonsopgang, luchtvochtigheid, windrichting \ldots is het nodig om meerdere API's te combineren.
+
+\subsection{Bestaand onderzoek}
+Er is al onderzoek gedaan naar het genereren van routes voor lopers. \textcite{Loepp2018} heeft onderzoek gedaan naar het genereren van routes voor lopers op basis van verschillende parameters.
+Hier werd een app, genaamd \textit{Runnerful}, voorgesteld. Deze maakt gebruik van gemakkelijk toegankelijke kaartgegevensbronnen om routes te genereren met een door de gebruiker gespecificeerde lengte.
+Vervolgens werden  deze kandidaat-routes geranschikt op basis van individuele vereisten door verdere verwerking van de kaartgegevens. Door middel van kritiek kan de hardloper de resultaten interactief verfijnen.
+De API's die gebruikt werden voor het genereren van routes zijn voornamelijk OpenStreetMap API, met occasionele requests naar de Google Maps API \autocite{Loepp2018}.
 
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
 % \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
@@ -34,13 +50,13 @@ Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle no
 %   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
 %   ...'')
 
-Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
-
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
 \label{sec:methodologie}
 
-Eerst wordt een grondige analyse gedaan over welke API's er beschikbaar zijn om routes te genereren. Vervolgens wordt er een vergelijking gemaakt tussen de verschillende API's en wordt er een keuze gemaakt welke API het meest geschikt is voor het genereren van routes. Er zal een combinatie nodig zijn van verschillende API's om de gewenste routes te genereren. 
+Eerst wordt een grondige analyse gedaan over welke API's er beschikbaar zijn om routes te genereren. Vervolgens wordt er een vergelijking gemaakt tussen de verschillende API's en wordt er een keuze gemaakt welke API het meest geschikt is voor het genereren van routes. Er zal een combinatie nodig zijn van verschillende API's om de gewenste routes te genereren.
+De keuze van de API's zal afhangen van de beschikbare features, de limieten en de kosten. Er zal ook een analyse gemaakt worden van de verschillende route-apps die momenteel beschikbaar zijn. Welke functies bieden deze apps aan? Welke parameters willen loopfanaten aan een route koppelen? 
+Het is reeds bewezen dat een combinatie van de OpenStreetMap API en de Google Maps API geschikt is voor het genereren van routes. \autocite{Loepp2018} Deze API's zullen dus zeker onderzocht worden.
 Er zal een applicatie ontwikkeld worden als \emph{Proof of Concept} die gebruik maakt van de gekozen API's. De applicatie zal ontwikkeld worden in React Native en Node.js. React Native is een framework dat het mogelijk maakt om native apps te ontwikkelen voor Android en iOS\@. Node.js is een JavaScript runtime die het mogelijk maakt om JavaScript code te schrijven buiten de browser.
 
 Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
