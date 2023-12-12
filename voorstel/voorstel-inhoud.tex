@@ -4,11 +4,11 @@
 \label{sec:introductie}
 
 In de moderne wereld,
-waarin technologie steeds belangrijker wordt,
+waarin tech\-no\-lo\-gie \@ steeds belangrijker wordt,
 is het niet meer dan normaal dat er ook technologie bestaat voor sporters.
 Zo zijn er al verschillende apps beschikbaar voor lopers, zoals Strava, Runkeeper en Nike Run Club.
-Deze apps bieden de mogelijkheid om routes te genereren op basis van verschillende parameters, zoals afstand, locatie en moeilijkheidsgraad. Deze functies zijn echter niet altijd toegankelijk via de gratis versie van de app.
-In sommige gevallen moet er een abonnement worden afgesloten om gebruik te kunnen maken van deze functies. Een API, oftewel een interface, maakt communicatie tussen verschillende applicaties mogelijk.
+De functies dat deze apps aandbieden zijn echter niet altijd gefocused op het genereren van routes of zijn niet toegankelijk via de gratis versie van de app.
+In sommige gevallen moet er een abonnement worden afgesloten om gebruik te kunnen maken van alle functies. Een API, oftewel een interface, maakt communicatie tussen verschillende applicaties mogelijk.
 Welke publieke, en gratis, API's zijn er beschikbaar om routes te genereren? Welke combinatie van deze API's is het meest geschikt voor het genereren van routes voor loopfanaten? Welke functies bieden populaire route-apps aan? Welke parameters willen loopfanaten aan een route koppelen? Dit zijn de vragen die in dit onderzoek beantwoord zullen worden.
 Dit onderzoek concentreert zich op het verzamelen van diverse online tools voor het genereren van een route, in de vorm van gratis open API's, met als doel ze te integreren in een kosteloze route-app voor loopfanaten.
 Om dit te realiseren zal er een proof of concept ontwikkeld worden die gebruik maakt van de gekozen API's. De applicatie zal ontwikkeld worden in React Native en Node.js. React Native is een framework dat het mogelijk maakt om native apps te ontwikkelen voor Android en iOS\@. Node.js is een JavaScript runtime die het mogelijk maakt om JavaScript code te schrijven buiten de browser.
@@ -29,15 +29,15 @@ op maat gemaakte route-applicaties.
 \subsection{Populaire apps voor lopers}
 Er bestaan reeds verschillende applicaties voor lopers. Enkele populaire apps zijn:
 Runna, Strava, Nike Run Club, Map My Run by Under Armour, Runkeeper, Peloton, Stride, Apple Fitness Plus en anderen \autocite{Downey2023}.
-Uit deze lijst van zogezegde "beste" apps voor lopers,
+Uit deze lijst van zogezegde "beste"\@ apps voor lopers,
 is er geen enkele app die volledig gratis is \textbf{en} een route kan genereren op basis van verschillende parameters.
 Echter hebben deze apps wel andere interessante functies, zoals het bijhouden van statistieken, het delen van routes met andere gebruikers,
-het aanmaken van groepen, het volgen van andere gebruikers, het aanmaken van een trainingsschema \ldots
-
+het aanmaken van groepen, het volgen van andere gebruikers, het aanmaken van een trainingsschema \ldots \@
+Deze functies kunnen ook interessant zijn om te integreren in de applicatie.
 
 \subsection{API's voor het genereren van routes}
 Er zijn verschillende API's beschikbaar voor het genereren van routes.
-Enkele voorbeelden zijn: Google Maps, Geoapify, Openrouteservice, Mapbox, OpenRouteService, Here, GraphHopper \ldots
+Enkele voorbeelden zijn: Google Maps, Geoapify, Mapbox, OpenRouteService, Here, GraphHopper, OpenStreetMap \ldots \@
 Deze API's zijn allemaal gratis te gebruiken, maar hebben een limiet voor het aantal requests per dag of per maand,
 of bieden minder functies in de gratis versie. De limiet verschilt per API, maar is meestal voldoende voor een applicatie die nog in ontwikkeling is.
 Elke API heeft zijn eigen voor- en nadelen. Zo is Google Maps een zeer populaire API,
@@ -45,11 +45,11 @@ maar is het niet mogelijk om een route te genereren op basis van het aantal hoog
 
 \subsection{API's voor het opvragen van weersverwachtingen}
 Er zijn verschillende API's beschikbaar voor het opvragen van weersverwachtingen.
-Enkele voorbeelden zijn: OpenWeather, Weather API, Weatherbit, Weatherstack \ldots
+Enkele voorbeelden zijn: OpenWeather, Weather API, Weatherbit, Weatherstack \ldots \@
 Zoals bij de API's voor het genereren van routes, zijn deze API's ook gratis te gebruiken,
 maar hebben ze wel een limiet op het aantal requests per dag of per maand, of hebben ze minder features voor een gratis versie.
 Voor een simpele weersverwachting is \emph{één} van deze API's voldoende, Weather API bevat de meeste features,
-dus deze zou zeker geschikt zijn. Voor meer features zoals zonsondergang, zonsopgang, luchtvochtigheid, windrichting \ldots
+dus deze zou zeker geschikt zijn. Voor meer features zoals zonsondergang, zonsopgang, luchtvochtigheid, windrichting \ldots \@
 is het nodig om meerdere API's te combineren.
 
 \subsection{Bestaand onderzoek}
@@ -97,7 +97,11 @@ Deze analyse vormt de basis voor het bepalen van gewenste features en het ontwer
 Na deze uitgebreide analyse-fasen wordt een \emph{Proof of Concept} ontwikkeld.
 Voor het \emph{Proof of Concept} wordt een applicatie ontwikkeld met gebruik van de gekozen API's.
 Het Proof of Concept bestaat uit twee delen: een online backend ontwikkeld in Node.js
-en een mobiele applicatie ontwikkeld in React Native. De applicatie zal beschikbaar zijn op zowel Android- als iOS-systemen.
+en een mobiele applicatie ontwikkeld in React Native. 
+De backend zal de verschillende API's integreren en is verantwoordelijk voor 
+de generatie van routes en het opvragen van weersverwachtingen.
+De mobiele applicatie zal de gebruikersinterface vormen voor de applicatie.
+De applicatie zal beschikbaar zijn op zowel Android- als iOS-systemen.
 %---------- Verwachte resultaten ----------------------------------------------
 
 \section{Verwacht resultaat, conclusie}%
@@ -105,7 +109,7 @@ en een mobiele applicatie ontwikkeld in React Native. De applicatie zal beschikb
 
 Als resultaat van dit onderzoek wordt een \emph{Proof of Concept}
 voor een kosteloze route-app ontwikkeld voor loopfanaten.
-Deze applicatie zal gebruik maken van verschillende API's voor het
+Deze applicatie zal gebruik maken van verschillende publieke, gratis API's voor het
 genereren van routes en het opvragen van weersverwachtingen voor de route.
 De applicatie zal beschikbaar zijn op zowel Android- als iOS-systemen.
 
@@ -116,5 +120,7 @@ De applicatie zal beschikbaar zijn op zowel Android- als iOS-systemen.
     \label{fig:wireframes}
 \end{figure}
 
-Figuur \ref{fig:wireframes} toont hoe de applicatie eruit zou kunnen zien. Dit is echter een eerste versie,
+Figuur \ref{fig:wireframes} toont hoe de applicatie eruit zou kunnen zien. 
+Dit is echter een eerste versie,
 die nog verder uitgewerkt zal worden met behulp van de nodige analyse van huidige route-apps.
+Het is de bedoeling dat een gebruiker/loopfanaat gemakkelijk een route kan genereren op basis van verschillende parameters. Deze route bevat dan ook een weersverwachting. 
