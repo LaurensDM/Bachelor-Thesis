@@ -7,7 +7,7 @@ In de moderne wereld,
 waarin tech\-no\-lo\-gie \@ steeds belangrijker wordt,
 is het niet meer dan normaal dat er ook technologie bestaat voor sporters.
 Zo zijn er al verschillende apps beschikbaar voor lopers, zoals Strava, Runkeeper en Nike Run Club.
-De functies dat deze apps aandbieden zijn echter niet altijd gefocused op het genereren van routes of zijn niet toegankelijk via de gratis versie van de app.
+De functies dat deze apps aanbieden zijn echter niet altijd gefocust op het genereren van routes of zijn niet toegankelijk via de gratis versie van de app.
 In sommige gevallen moet er een abonnement worden afgesloten om gebruik te kunnen maken van alle functies. Een API, oftewel een interface, maakt communicatie tussen verschillende applicaties mogelijk.
 Welke publieke, en gratis, API's zijn er beschikbaar om routes te genereren? Welke combinatie van deze API's is het meest geschikt voor het genereren van routes voor loopfanaten? Welke functies bieden populaire route-apps aan? Welke parameters willen loopfanaten aan een route koppelen? Dit zijn de vragen die in dit onderzoek beantwoord zullen worden.
 Dit onderzoek concentreert zich op het verzamelen van diverse online tools voor het genereren van een route, in de vorm van gratis open API's, met als doel ze te integreren in een kosteloze route-app voor loopfanaten.
@@ -74,6 +74,9 @@ met occasionele requests naar de Google Maps API \autocite{Loepp2018}.
 \label{sec:methodologie}
 
 De aanpak van dit onderzoek bestaat uit drie delen: een analyse van API's voor het genereren van routes, een analyse van bestaande route-apps, en een \emph{Proof of Concept} voor het genereren van routes.
+
+\subsection{Analyse van API's}
+
 Eerst wordt een grondige analyse uitgevoerd van beschikbare API's voor het genereren van routes.
 Daarna wordt een vergelijking gemaakt tussen verschillende API's,
 waarbij keuzes worden gebaseerd op factoren zoals features, gebruikslimieten,
@@ -91,9 +94,17 @@ gedetailleerde documentatie, schaalbaarheid, duidelijke gebruikslimieten en tari
 aanpasbaarheid, en vooruitziende mogelijkheden voor toekomstige uitbreidingen.
 De combinatie van de OpenStreetMap API en de Google Maps API is reeds succesvol gebleken voor route-generatie \autocite{Loepp2018},
 en zal daarom grondig worden onderzocht.
-Daarnaast wordt een analyse gemaakt van bestaande route-apps.
+
+\subsection{Analyse van bestaande route-apps}
+
+Er wordt ook een analyse gemaakt van bestaande route-apps.
 Welke functies bieden ze aan? Welke parameters willen loopfanaten aan een route koppelen? Hoe ziet de UI/UX eruit?
-Deze analyse vormt de basis voor het bepalen van gewenste features en het ontwerp van de applicatie.
+Deze analyse zal worden uitgevoerd door het bestuderen van de verschillende route-apps 
+en eventueel het uitvoeren van een enquête met gebruikers van loop-apps.
+Dit zal de basis vormen voor het bepalen van gewenste features en het ontwerp van de applicatie. 
+
+\subsection{Proof of Concept}
+
 Na deze uitgebreide analyse-fasen wordt een \emph{Proof of Concept} ontwikkeld.
 Voor het \emph{Proof of Concept} wordt een applicatie ontwikkeld met gebruik van de gekozen API's.
 Het Proof of Concept bestaat uit twee delen: een online backend ontwikkeld in Node.js
@@ -101,6 +112,10 @@ en een mobiele applicatie ontwikkeld in React Native.
 De backend zal de verschillende API's integreren en is verantwoordelijk voor 
 de generatie van routes en het opvragen van weersverwachtingen.
 De mobiele applicatie zal de gebruikersinterface vormen voor de applicatie.
+Als een laatste stap wordt een kostenanalyse uitgevoerd om de haalbaarheid van de lancering en het onderhoud van de applicatie te beoordelen.
+Hierbij wordt concreet onderzoek gedaan naar de kosten van de verschillende API's voor een bepaald aantal requests, 
+de kosten van het hosten van de backend, en de kosten van het publiceren van de applicatie in de App Store en Google Play Store.
+Verder worden er mogelijkheden onderzocht om deze kosten te dekken, zoals het toevoegen van advertenties.
 De applicatie zal beschikbaar zijn op zowel Android- als iOS-systemen.
 %---------- Verwachte resultaten ----------------------------------------------
 
