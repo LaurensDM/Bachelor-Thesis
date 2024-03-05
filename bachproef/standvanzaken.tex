@@ -9,10 +9,60 @@
 
 De voortdurende vooruitgang in digitale technologieën heeft geleid tot een overvloed aan online hulpmiddelen en toepassingen,
 waaronder diverse apps voor het begeleiden van fysieke activiteiten.
-Deze sectie over de huidige stand van zaken onderzoekt de integratie van online hulpmiddelen voor de ontwikkeling van kosteloze,
-op maat gemaakte route-applicaties.
+Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van online tools voor de ontwikkeling van route-applicaties.
 
-\subsection{Populaire apps voor lopers}
+\section{Bestaand onderzoek}
+
+    \subsection{Recommending Running Routes}
+
+    Er is al onderzoek gedaan naar het genereren van routes voor lopers.
+    \textcite{Loepp2018} hebben onderzoek gedaan naar het genereren van routes voor lopers op basis van verschillende parameters.
+    Hier werd een app, genaamd \emph{Runnerful}, voorgesteld.
+    Deze maakt gebruik van gemakkelijk toegankelijke kaartgegevensbronnen om routes te genereren met een door de gebruiker gespecificeerde lengte.
+    Vervolgens werden  deze kandidaat-routes gerangschikt op basis van individuele vereisten door verdere verwerking van de kaartgegevens.
+    Door middel van kritiek kan de hardloper de resultaten interactief verfijnen.
+    De API's die gebruikt werden voor het genereren van routes zijn voornamelijk OpenStreetMap API,
+    met occasionele requests naar de Google Maps API \autocite{Loepp2018}.
+
+    \subsection{Smart Running Route Generation}
+
+    In this thesis we introduce a model to assign and rank paths and routes with
+    the objective to find the best and most beautiful of these routes that have some
+    basic constraints. We show and discuss algorithms that find such best routes
+    based on our model. We apply the theory in an Android application based on
+    OpenStreetMap data, that finds optimized routes with adjustable length at any
+    location for outdoor sports activities like for example running, walking or going
+    for a walk.
+
+    \subsection{Developing an android-based running application}
+
+    There are many types of exercise that people do to achieve healthy lifestyle and one of them is running. Runners track their activities to
+    know their progress and help them achieve their goals. One of the alternatives to monitor is through a fitness application which has also
+    become a platform for runners to connect with their friends. As a running shoes manufacturer, XYZ Company wanted to help runners
+    monitor their time, distance, pace, and calories burned while running. In addition, the company also wanted to support the running
+    communities to grow bigger. This thesis project aimed at developing an Android-based application that provides feedback on users’
+    activities while they are running, as well as features that lets them connect with their friends. Moreover, users are also able to schedule a
+    run, compute their heart rate, and run with their friends. The application was developed using Java and utilized Google Maps API and
+    Firebase. An application unit testing as well as unit acceptance testing both to users and client were performed to ensure that the
+    application functions properly. The testing showed a satisfactory result and several recommendations for future development were
+    also proposed. To conclude, the application was able to deliver all the client’s requirement and achieve the aim of this thesis project.
+
+    \subsection{Evaluating an Itinerary Recommendation Algorithm for Runners}
+
+    Recommender systems for runners primarily rely on existing running traces in an area. 
+    In the absence of running traces, recommending running routes is challenging. 
+    This paper describes our approach to generating and proposing ”pleasant” running tours that consider the runner’s 
+    standard preferences and their distance and elevation constraints. 
+    Our algorithm is an approach to solve the cold start recommendation problem in unknown places by mining available map-data. 
+    We implemented a prototypical smartphone app that generates and recommends pleasant running routes to evaluate our algorithm’s 
+    effectiveness. An in-the-wild user study was conducted, with 11 participants across three cities. 
+    We tested the correlation between what is defined as ”pleasant path” by our algorithm and the user’s perception. 
+    The results of the user study show a positive correlation and support our algorithm. We also outline implications for the design 
+    of successful recommendation algorithms for runners.
+    
+
+\section{Populaire apps voor lopers}
+
 Er bestaan reeds verschillende applicaties voor lopers. Enkele populaire apps zijn:
 Runna, Strava, Nike Run Club, Map My Run by Under Armour, Runkeeper, Peloton, Stride, Apple Fitness Plus en anderen \autocite{Downey2023}.
 Uit deze lijst van zogezegde "beste"\@ apps voor lopers,
@@ -21,7 +71,8 @@ Echter hebben deze apps wel andere interessante functies, zoals het bijhouden va
 het aanmaken van groepen, het volgen van andere gebruikers, het aanmaken van een trainingsschema \ldots \@
 Deze functies kunnen ook interessant zijn om te integreren in de applicatie.
 
-\subsection{API's voor het genereren van routes}
+\section{API's voor het genereren van routes}
+
 Er zijn verschillende API's beschikbaar voor het genereren van routes.
 Enkele voorbeelden zijn: Google Maps, Geoapify, Mapbox, OpenRouteService, Here, GraphHopper, OpenStreetMap \ldots \@
 Deze API's zijn allemaal gratis te gebruiken, maar hebben een limiet voor het aantal requests per dag of per maand,
@@ -29,7 +80,8 @@ of bieden minder functies in de gratis versie. De limiet verschilt per API, maar
 Elke API heeft zijn eigen voor- en nadelen. Zo is Google Maps een zeer populaire API,
 maar is het niet mogelijk om een route te genereren op basis van het aantal hoogtemeters.
 
-\subsection{API's voor het opvragen van weersverwachtingen}
+\section{API's voor het opvragen van weersverwachtingen}
+
 Er zijn verschillende API's beschikbaar voor het opvragen van weersverwachtingen.
 Enkele voorbeelden zijn: OpenWeather, Weather API, Weatherbit, Weatherstack \ldots \@
 Zoals bij de API's voor het genereren van routes, zijn deze API's ook gratis te gebruiken,
@@ -38,15 +90,7 @@ Voor een simpele weersverwachting is \emph{één} van deze API's voldoende, Weat
 dus deze zou zeker geschikt zijn. Voor meer features zoals zonsondergang, zonsopgang, luchtvochtigheid, windrichting \ldots \@
 is het nodig om meerdere API's te combineren.
 
-\subsection{Bestaand onderzoek}
-Er is al onderzoek gedaan naar het genereren van routes voor lopers.
-\textcite{Loepp2018} hebben onderzoek gedaan naar het genereren van routes voor lopers op basis van verschillende parameters.
-Hier werd een app, genaamd \emph{Runnerful}, voorgesteld.
-Deze maakt gebruik van gemakkelijk toegankelijke kaartgegevensbronnen om routes te genereren met een door de gebruiker gespecificeerde lengte.
-Vervolgens werden  deze kandidaat-routes gerangschikt op basis van individuele vereisten door verdere verwerking van de kaartgegevens.
-Door middel van kritiek kan de hardloper de resultaten interactief verfijnen.
-De API's die gebruikt werden voor het genereren van routes zijn voornamelijk OpenStreetMap API,
-met occasionele requests naar de Google Maps API \autocite{Loepp2018}.
+
 
 % Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
 
@@ -56,4 +100,3 @@ met occasionele requests naar de Google Maps API \autocite{Loepp2018}.
 
 % Let er ook op: het \texttt{cite}-commando voor de punt, dus binnen de zin. Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
 
-\lipsum[7-20]
