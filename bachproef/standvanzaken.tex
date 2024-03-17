@@ -11,9 +11,7 @@ De voortdurende vooruitgang in digitale technologieën heeft geleid tot een over
 waaronder diverse apps voor het begeleiden van fysieke activiteiten.
 Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van online tools voor de ontwikkeling van route-applicaties.
 
-\section{Bestaand onderzoek}
-
-    \subsection{Route generatie}
+    \section{Route generatie}
 
     Er is al onderzoek gedaan naar het genereren van routes voor lopers. In deze sectie worden enkele van deze onderzoeken besproken.
     
@@ -26,7 +24,7 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     met occasionele requests naar de Google Maps API \autocite{Loepp2018}.
 
     \textcite{Schulze2016} hebben een model voorgesteld voor het rangschikken van routes om de beste en mooiste routes te vinden
-    die aan bepaalde basisvereisten voldoen. Hievoor werd een Android applicatie ontwikkeld die gebruik maakt van OpenStreetMap data.
+    die aan bepaalde basisvereisten voldoen. Hiervoor werd een Android applicatie ontwikkeld die gebruik maakt van OpenStreetMap data.
     De applicatie kan geoptimaliseerde routes vinden met een aanpasbare lengte op elke locatie voor buitenactiviteiten 
     zoals hardlopen, wandelen of een wandeling maken \autocite{Schulze2016}.
 
@@ -40,30 +38,128 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     De voorkeuren zijn, onder andere, het vermijden van drukke straten of het kiezen van een route met een mooi uitzicht.
     Het systeem maakt gebruik van OpenStreetMap data \autocite{Novack2018}.
 
+    \section{Doelpubliek}
 
-    \subsection{Doelpubliek}
+    Welk doelpubliek heeft interesse in een route-genererende applicatie? Welke features zijn belangrijk voor dit doelpubliek?
+    Hier wordt onderzocht welke doelgroepen interesse hebben in een dergelijke applicatie.
 
-    In this thesis we introduce a model to assign and rank paths and routes with
-    the objective to find the best and most beautiful of these routes that have some
-    basic constraints. We show and discuss algorithms that find such best routes
-    based on our model. We apply the theory in an Android application based on
-    OpenStreetMap data, that finds optimized routes with adjustable length at any
-    location for outdoor sports activities like for example running, walking or going
-    for a walk.
+    De heterogeniteit onder hardlopers maakt het nuttig en aantrekkelijk om hen in groepen te segmenteren om hun AOI's te begrijpen. 
+    Segmentatie van consumenten in sport is uitgebreid gedocumenteerd, waarbij studies meestal onderscheid maken tussen consumenten 
+    op basis van demografische factoren. Naast demografische kenmerken blijken gedrags- en psychografische variabelen ook 
+    verschillende soorten marathonlopers te onderscheiden. Verschillende studies hebben psychografische variabelen, zoals AIO's, 
+    gebruikt om hardlopers te clusteren. Verschillende aspecten zoals gezondheid, hardloopidentiteit, persoonlijke doelen, sociale aspecten, 
+    verslaving aan hardlopen, commitment, competitie en gemak van de praktijk worden gebruikt om hardlopers te segmenteren.
+    Deze studies benadrukken allemaal het belang van AIO's om waardevolle inzichten te krijgen in de behoeften van hardlopers 
+    en om typologieën van hardlopers te creëren \textcite{Janssen2020}. 
 
-    \subsection{Technologie}
+    In dit onderzoek werd een online vragenlijst, de Eindhoven Running Survey 2016 (ERS2016), 
+    gebruikt om gegevens te verzamelen onder deelnemers van het hardloopevenement Eindhoven Marathon. 
+    Een totaal van 3727 deelnemers voltooide de vragenlijst volledig (responspercentage van 20,4 \%). 
+    Deelnemers waren verdeeld over verschillende afstanden, met de gemiddelde leeftijd van 42,2 jaar. 
+    Ongeveer een derde van de deelnemers was vrouw, bijna negen van de tien waren werkzaam en de meerderheid had hoger onderwijs genoten. 
+    De sociodemografische kenmerken van de respondenten waren vergelijkbaar met eerdere grootschalige hardloopstudies in West-Europa.\textcite{Janssen2020}.
+    Dit betekent dat de resultaten van dit onderzoek waarschijnlijk representatief zijn voor de hardlooppopulatie in West-Europa.
 
-    There are many types of exercise that people do to achieve healthy lifestyle and one of them is running. Runners track their activities to
-    know their progress and help them achieve their goals. One of the alternatives to monitor is through a fitness application which has also
-    become a platform for runners to connect with their friends. As a running shoes manufacturer, XYZ Company wanted to help runners
-    monitor their time, distance, pace, and calories burned while running. In addition, the company also wanted to support the running
-    communities to grow bigger. This thesis project aimed at developing an Android-based application that provides feedback on users’
-    activities while they are running, as well as features that lets them connect with their friends. Moreover, users are also able to schedule a
-    run, compute their heart rate, and run with their friends. The application was developed using Java and utilized Google Maps API and
-    Firebase. An application unit testing as well as unit acceptance testing both to users and client were performed to ensure that the
-    application functions properly. The testing showed a satisfactory result and several recommendations for future development were
-    also proposed. To conclude, the application was able to deliver all the client’s requirement and achieve the aim of this thesis project.
-    
+    In dit onderzoek werden 4 types hardlopers geïdentificeerd:
+    \begin{itemize}
+        \item Recreatieve individuele hardlopers
+        \item Sociale competitieve hardlopers
+        \item Individuele competitieve hardlopers
+        \item Toegewijde hardlopers
+    \end{itemize}
+
+    Binnen deze 4 groepen van hardlopers zijn er verschillen in het gebruik van apps en andere apparatuur. 
+    De resultaten toonden significante variaties (alleen significante effecten worden beschreven). 
+    In relatieve termen waren recreatieve individuele hardlopers de meest enthousiaste app-gebruikers
+    en de kleinste groep gebruikers van sporthorloges, terwijl sociale competitieve hardlopers minder app-gebruikers 
+    omvatten dan recreatieve individuen, ongeveer hetzelfde als individuele competitieve
+    en meer dan toegewijde hardlopers. Sociale competitieve hardlopers omvatten meer gebruikers van sporthorloges 
+    dan de recreatieve individuele groep, en minder dan zowel individuele competitieve
+    als toegewijde groepen. De laagste proportie niet-gebruikers werd gevonden 
+    onder de individuele competitieve hardlopers in vergelijking met de andere types, 
+    terwijl zij en de toegewijde hardlopers de hoogste acceptatie van sporthorloges hadden. 
+    Ten slotte hadden de toegewijde hardlopers de minste app-gebruikers, 
+    en samen met de individuele competitieve hardlopers hadden zij de hoogste proportie gebruikers van sporthorloges.
+
+    De resultaten van dit onderzoek tonen aan dat er verschillende groepen hardlopers zijn die verschillende behoeften hebben. 
+    Het is belangrijk om deze verschillen in overweging te nemen bij het ontwikkelen van een route-genererende applicatie.
+    Zo kan er bijvoorbeeld een functie toegevoegd worden die het mogelijk maakt om routes te delen met vrienden,
+    of een functie die het mogelijk maakt om een trainingsschema aan te maken.
+
+    \section{Design overwegingen}
+
+    In de sectie over Doelpubliek werd reeds besproken dat er verschillende groepen hardlopers zijn die verschillende behoeften hebben.
+    Hieronder zitten niet per se enkel verschillen in het gebruik van apps en andere apparatuur, maar ook verschillen in de manier waarop ze gemotiveerd worden.
+    Het is belangrijk om deze verschillen in overweging te nemen bij het ontwikkelen van een route-genererende applicatie.
+
+    Hardlopen wordt gekenmerkt door zijn lage drempel en aantrekkelijkheid voor een breed scala aan mensen. 
+    Deze heterogeniteit onder hardlopers komt ook tot uiting in de grote aantallen traditionele en thematische hardloopevenementen. 
+    Er is echter een hoog uitvalpercentage onder amateurhardlopers, voornamelijk als gevolg van hardloopgerelateerde blessures en verlies van motivatie. 
+    Een belangrijke uitdaging blijft het omzetten van intenties in daadwerkelijk langdurig hardloopgedrag. 
+    Barrières en drijfveren tussen het maken van de intentie om te gaan hardlopen en het daadwerkelijke hardlopen zelf spelen hierbij een rol. 
+    Begrip van hoe amateurhardlopers dagelijkse barrières ervaren en hoe dit hun potentiële runs beïnvloedt, kan waardevol zijn 
+    om te identificeren hoe ontwerp- en interactieve technologieën hardlopers beter kunnen ondersteunen voorbij de eigenlijke run.\textcite{Menheere2020}.
+
+    In het onderzoek van \textcite{Menheere2020} werden verschillende ontwerpaanbevelingen gedaan. Hieronder worden enkele van deze aanbevelingen besproken.
+
+    Ontwerpaanbeveling 1: Begeleid zelfspraak en versterk de verwachte beloning van het hardlopen door middel van ontwerp. 
+    Illustratief ontwerpconcept: Een interactieve sportmaatje dat dit gesprek begint kan helpen om deze zelfspraak naar een daadwerkelijk gesprek te verplaatsen, 
+    anticipatiegevoelens stimuleren en zo bijdragen aan het overtreffen van drijfveren ten opzichte van barrières. 
+    Om te meten of het maatje wordt vastgehouden, kan de Hexiwear-prototypingtool worden gebruikt, met een geïntegreerde versnellingsmeter, 
+    trilmotor, Bluetooth low energy en een ingebouwde batterij. Een andere strategie zou kunnen bestaan uit het verminderen van de hoeveelheid 
+    negatieve zelfspraak door middel van een interactief apparaat dat zelfbewustzijn ondersteunt en die negatieve gedachten omkeert.
+
+    Ontwerpaanbeveling 2: Maak de voorbereidingsrituelen interessanter of plezieriger door middel van ontwerp. 
+    Illustratief ontwerpconcept: Een interactieve kledinghanger die de gebruiker overtuigt om hun sportkleding aan te trekken. 
+    De gebruiker hangt hun sportkleding aan de hanger, die hardloopintenties detecteert via een verbinding met de agenda van de gebruikers. 
+    Gedurende de dag zal de hanger langzaam beginnen te krimpen door de armen van de hanger aan servomotoren te verbinden. 
+    Als de gebruiker de kleding uittrekt om te gaan sporten, verschijnt er een motiverend citaat op een geïntegreerd e-inktscherm. 
+    Echter, wanneer de sportkleding niet op tijd wordt uitgetrokken, zal de grootte van de hanger een punt bereiken waarop de sportkleding op de grond valt.
+
+    Ontwerpaanbeveling 3: Bied tools aan om hardlopers te helpen hun hardloopsessie van tevoren te visualiseren. 
+    Illustratief ontwerpconcept: Een multisensorisch object dat sensaties oproept die verband houden met iemands persoonlijke hardloopervaring. 
+    Tussen de runs door zal het object het geluid van je voetstappen en omgeving afspelen, afhankelijk van de vorige hardlooproute. 
+    Het object zal ook natuurlijke geuren verspreiden (bijvoorbeeld bomen, modder, gras) en lichtpatronen gebruiken om hardloopbeelden op te roepen.
+
+    Ontwerpaanbeveling 4: Help hardlopers negatieve emoties, zoals frustratie en onzekerheid, die ze ervaren tijdens het hardlopen te overwinnen 
+    door middel van ontwerp. 
+    Illustratief ontwerpconcept: Een bestaand concept op de markt dat deze ontwerpuitdaging aanpakt, is 'Zombies Run!', 
+    een gegamificeerde applicatie die de hardloper onderdompelt in een post-apocalyptische omgeving. 
+    Door hun missie en muziek via koptelefoon te horen, moet de speler zombies vermijden en goederen verzamelen om te overleven. 
+    Het gamificeren van de hardloopinspanning transformeert negatieve emoties in positieve gevoelens \autocite{Menheere2020}.
+
+    \section{Technologie}
+
+    Verschillende technologieën kunnnen gebruikt worden voor het ontwikkelen van een route-genererende applicatie. 
+    Hieronder worden enkele van deze technologieën besproken en geëvalueerd.
+
+    - React Native
+    - Flutter
+    - OpenStreetMap API
+    - Google Maps API
+    - Nodejs
+
+    Voor het ontwikkelen van een route-genererende applicatie kunnen verschillende technologieën gebruikt worden. 
+    Om een applicatie te ontwikkelen die zowel op Android als op iOS werkt, kan er gebruik gemaakt worden van React Native of Flutter.
+    Deze technologieën maken het mogelijk om een applicatie te ontwikkelen die op beide platformen werkt.
+    Een andere optie is om de applicatie te ontwikkelen in Java of Kotlin voor Android en in Swift voor iOS,
+    maar dit zou betekenen dat de applicatie twee keer ontwikkeld moet worden.
+
+    Flutter is een open-source UI toolkit van Google voor het bouwen van natively gecompileerde applicaties voor mobiele, web- en desktop vanuit één codebase.
+
+    React Native is een open-source framework voor het ontwikkelen van mobiele applicaties.
+    Het werd ontwikkeld door Facebook en is gebaseerd op JavaScript.
+
+    OpenStreetMap is een open-source kaartendatabase die door iedereen kan worden bewerkt.
+    Het is een alternatief voor Google Maps en kan gebruikt worden om kaarten te genereren.
+
+    Google Maps API is een set van API's die ontwikkeld zijn door Google om kaarten te integreren in applicaties.
+    Deze API's kunnen gebruikt worden om kaarten te genereren, routes te berekenen, locaties te zoeken, enz.
+
+    Nodejs is een open-source, cross-platform JavaScript runtime om applicaties te bouwen. Het kan gebruikt worden om een server te bouwen voor de applicatie.
+    Zowel React Native als Flutter kunnen gebruikt worden in combinatie met Nodejs om een volledige applicatie te ontwikkelen.
+    OpenStreetMap API en Google Maps API bieden beiden npm packages aan die gebruikt kunnen worden in combinatie met Nodejs.
+
 
 \section{Populaire apps voor lopers}
 
