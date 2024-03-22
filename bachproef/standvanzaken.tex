@@ -16,12 +16,20 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     Er is al onderzoek gedaan naar het genereren van routes voor lopers. In deze sectie worden enkele van deze onderzoeken besproken.
     
     \textcite{Loepp2018} hebben onderzoek gedaan naar het genereren van routes voor lopers op basis van verschillende parameters.
-    Hier werd een app, genaamd \emph{Runnerful}, voorgesteld.
-    Deze maakt gebruik van gemakkelijk toegankelijke kaartgegevensbronnen om routes te genereren met een door de gebruiker gespecificeerde lengte.
-    Vervolgens werden  deze kandidaat-routes gerangschikt op basis van individuele vereisten door verdere verwerking van de kaartgegevens.
-    Door middel van kritiek kan de hardloper de resultaten interactief verfijnen.
-    De API's die gebruikt werden voor het genereren van routes zijn voornamelijk OpenStreetMap API,
-    met occasionele requests naar de Google Maps API \autocite{Loepp2018}.
+    Dit zijn de voorgestelde parameters: Lengte, uniekheid, vorm, verlichting, hoogte, vriendelijkheid, voor voetgangers, bochten, natuur en geschiedenis.
+    Zo werd een app, genaamd \emph{Runnerful} een prototypische Android-applicatie, voorgesteld. Er wordt gebruikgemaakt van de OpenStreetMap API om kaartgegevens te verzamelen. 
+    Met behulp van randannotaties in deze gegevens (bijvoorbeeld om snelwegen te negeren), 
+    wordt vervolgens een grafiek gecreëerd om het route-generatiealgoritme toe te passen.
+    Om de kortste routes te vinden tussen via-vertices (2-4 wordt gebruikt na initiële pretests), wordt een gemodificeerd A* zoekalgoritme gebruikt dat knooppunten 
+    die al zijn bezocht bestraft (afstanden worden gevarieerd en verschillende startpunten worden ingesteld). 
+    Scores worden berekend voor alle criteria: Voor sommige criteria, zoals Lengte of Vorm, worden scores berekend op basis van de grafiekgegevens zelf. 
+    Voor andere, zoals Verlichting of Vriendelijkheid voor voetgangers, wordt vertrouwd op randannotaties verstrekt door OpenStreetMap. 
+    Voor Hoogte worden bovendien verzoeken naar de Google Maps Hoogte API gestuurd. Wat betreft de hoeveelheid Natuur, wordt rekening gehouden met omliggende gebieden en hun OpenStreetMap-annotaties:
+    Met behulp van een straal-casting algoritme wordt bepaald of segmenten bossen, landbouwgrond of stranden doorkruisen. De verhouding van randen waarvoor dit geldt, 
+    bepaalt vervolgens de respectieve score. Bovendien wordt de afstand van elk routepunt tot gebieden die water voorstellen berekend. 
+    Als gebruikersinvoer vereist de app in eerste instantie alleen de gewenste routelengte. 
+    Vervolgens worden aanbevelingen gegenereerd op basis van de huidige GPS-positie. 
+     \autocite{Loepp2018}.
 
     \textcite{Schulze2016} hebben een model voorgesteld voor het rangschikken van routes om de beste en mooiste routes te vinden
     die aan bepaalde basisvereisten voldoen. Hiervoor werd een Android applicatie ontwikkeld die gebruik maakt van OpenStreetMap data.
