@@ -20,7 +20,7 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     Zo werd een app, genaamd \emph{Runnerful} een prototypische Android-applicatie, voorgesteld. Er wordt gebruikgemaakt van de OpenStreetMap API om kaartgegevens te verzamelen. 
     Met behulp van randannotaties in deze gegevens (bijvoorbeeld om snelwegen te negeren), 
     wordt vervolgens een grafiek gecreëerd om het route-generatiealgoritme toe te passen.
-    Om de kortste routes te vinden tussen via-vertices (2-4 wordt gebruikt na initiële pretests), wordt een gemodificeerd A* zoekalgoritme gebruikt dat knooppunten 
+    Om de kortste routes te vinden tussen via-vertices, wordt een gemodificeerd A* zoekalgoritme gebruikt dat knooppunten 
     die al zijn bezocht bestraft (afstanden worden gevarieerd en verschillende startpunten worden ingesteld). 
     Scores worden berekend voor alle criteria: Voor sommige criteria, zoals Lengte of Vorm, worden scores berekend op basis van de grafiekgegevens zelf. 
     Voor andere, zoals Verlichting of Vriendelijkheid voor voetgangers, wordt vertrouwd op randannotaties verstrekt door OpenStreetMap. 
@@ -37,8 +37,33 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     zoals hardlopen, wandelen of een wandeling maken \autocite{Schulze2016}.
 
     \textcite{Adwinda2020} hebben een Android-applicatie ontwikkeld die feedback geeft over de activiteiten van gebruikers tijdens het hardlopen.
-    De applicatie biedt ook functies die gebruikers in staat stellen om verbinding te maken met hun vrienden. 
-    Deze applicatie maakt gebruik van Java en maakt gebruik van de Google Maps API en Firebase \autocite{Adwinda2020}.
+    Dit zijn de front-end features:
+    \begin{itemize}
+        \item Locatietracking
+        \item Berekening van de hartslag
+        \item Activiteitengrafiek
+        \item Vrienden
+        \item Geplande hardlooproutes
+        \item Hardlopen met vrienden
+        \item Pushmeldingen
+        \item Gamification
+        \item Delen op Facebook
+        \item Nieuws en berichten
+    \end{itemize}
+    Dit zijn de voordelen dat een gebruiker kan krijgen van de applicatie:
+    \begin{itemize}
+        \item Gebruikers kunnen informatie krijgen over de duur van hun hardloopactiviteit, tempo, afstand, verbrande calorieën en hun hardlooproutes
+        \item Gebruikers kunnen hun hartslag zien
+        \item Gebruikers kunnen hun hardloopgeschiedenis delen op Facebook
+        \item Gebruikers kunnen communiceren met andere hardlopers via sociale functies (bijv. vrienden en feeds)
+        \item Gebruikers kunnen de realtime locatie en het tempo van hun vrienden volgen
+        \item Gebruikers kunnen hun tempo geschiedenissen zien in de vorm van een grafiek
+        \item Gebruikers kunnen hun prestaties zien
+        \item Gebruikers kunnen nieuws lezen dat beschikbaar is in de applicatie
+    \end{itemize}
+    De applicatie werd ontwikkeld in Android en maakt gebruik van de Google Maps API, verder werd er gebruik gemaakt van Firebase voor de database
+    en messaging functies.
+    \autocite{Adwinda2020}.
 
     \textcite{Gallo2020} hebben een navigatie systeem ontwikkeld dat head scanning gebruikt voor navigatie feedback.
 
