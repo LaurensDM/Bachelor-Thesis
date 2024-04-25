@@ -31,39 +31,17 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     Vervolgens worden aanbevelingen gegenereerd op basis van de huidige GPS-positie. 
      \autocite{Loepp2018}.
 
-    \textcite{Schulze2016} hebben een model voorgesteld voor het rangschikken van routes om de beste en mooiste routes te vinden
-    die aan bepaalde basisvereisten voldoen. Hiervoor werd een Android applicatie ontwikkeld die gebruik maakt van OpenStreetMap data.
-    De applicatie kan geoptimaliseerde routes vinden met een aanpasbare lengte op elke locatie voor buitenactiviteiten 
-    zoals hardlopen, wandelen of een wandeling maken \autocite{Schulze2016}.
+     Een ander relevant onderzoek is uitgevoerd door \textcite{Schulze2016}, 
+     die een model hebben voorgesteld voor het rangschikken van routes om de beste en mooiste routes te vinden die voldoen aan bepaalde basisvereisten. 
+     Dit resulteerde in de ontwikkeling van een Android applicatie die gebruik maakt van OpenStreetMap data. 
+     Met deze applicatie kunnen geoptimaliseerde routes worden gevonden met een aanpasbare lengte op elke locatie voor buitenactiviteiten zoals hardlopen, wandelen of een wandeling maken. 
+     Het model stelt gebruikers in staat om op een intuïtieve manier routes te vinden die voldoen aan hun specifieke behoeften en voorkeuren.
 
-    \textcite{Adwinda2020} hebben een Android-applicatie ontwikkeld die feedback geeft over de activiteiten van gebruikers tijdens het hardlopen.
-    Dit zijn de front-end features:
-    \begin{itemize}
-        \item Locatietracking
-        \item Berekening van de hartslag
-        \item Activiteitengrafiek
-        \item Vrienden
-        \item Geplande hardlooproutes
-        \item Hardlopen met vrienden
-        \item Pushmeldingen
-        \item Gamification
-        \item Delen op Facebook
-        \item Nieuws en berichten
-    \end{itemize}
-    Dit zijn de voordelen dat een gebruiker kan krijgen van de applicatie:
-    \begin{itemize}
-        \item Gebruikers kunnen informatie krijgen over de duur van hun hardloopactiviteit, tempo, afstand, verbrande calorieën en hun hardlooproutes
-        \item Gebruikers kunnen hun hartslag zien
-        \item Gebruikers kunnen hun hardloopgeschiedenis delen op Facebook
-        \item Gebruikers kunnen communiceren met andere hardlopers via sociale functies (bijv. vrienden en feeds)
-        \item Gebruikers kunnen de realtime locatie en het tempo van hun vrienden volgen
-        \item Gebruikers kunnen hun tempo geschiedenissen zien in de vorm van een grafiek
-        \item Gebruikers kunnen hun prestaties zien
-        \item Gebruikers kunnen nieuws lezen dat beschikbaar is in de applicatie
-    \end{itemize}
-    De applicatie werd ontwikkeld in Android en maakt gebruik van de Google Maps API, verder werd er gebruik gemaakt van Firebase voor de database
-    en messaging functies.
-    \autocite{Adwinda2020}.
+     Een ander interessant onderzoek, uitgevoerd door \textcite{Adwinda2020}, 
+     heeft geleid tot de ontwikkeling van een Android-applicatie die feedback geeft over de activiteiten van gebruikers tijdens het hardlopen. 
+     Deze uitgebreide applicatie biedt een breed scala aan functies, waaronder locatietracking, hartslagberekening, activiteitengrafieken, sociale functies zoals vrienden en feeds, 
+     geplande hardlooproutes, pushmeldingen, gamification en sociale media-integratie. Gebruikers kunnen gedetailleerde informatie krijgen over hun hardloopactiviteit, hartslag, 
+     hardloopgeschiedenis en prestaties. De app maakt gebruik van de Google Maps API en Firebase voor de database en messaging functies, waardoor een naadloze gebruikerservaring mogelijk is.
 
     \textcite{Gallo2020} hebben een navigatie systeem ontwikkeld dat head scanning gebruikt voor navigatie feedback.
 
@@ -163,47 +141,36 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
 
     \section{Technologie}
 
-    Verschillende technologieën kunnnen gebruikt worden voor het ontwikkelen van een route-genererende applicatie. 
-    Hieronder worden enkele van deze technologieën besproken en geëvalueerd.
 
-    - React Native
-    - Flutter
-    - OpenStreetMap API
-    - Google Maps API
-    - Nodejs
+    Verschillende technologieën kunnen worden overwogen voor het ontwikkelen van een route-genererende applicatie. Hieronder worden enkele van deze technologieën besproken:
 
-    Voor het ontwikkelen van een route-genererende applicatie kunnen verschillende technologieën gebruikt worden. 
-    Om een applicatie te ontwikkelen die zowel op Android als op iOS werkt, kan er gebruik gemaakt worden van React Native of Flutter.
-    Deze technologieën maken het mogelijk om een applicatie te ontwikkelen die op beide platformen werkt.
-    Een andere optie is om de applicatie te ontwikkelen in Java of Kotlin voor Android en in Swift voor iOS,
-    maar dit zou betekenen dat de applicatie twee keer ontwikkeld moet worden.
+    \subsection{React Native}
 
-    Flutter is een open-source UI toolkit van Google voor het bouwen van natively gecompileerde applicaties voor mobiele, web- en desktop vanuit één codebase.
+    React Native is een populair open-source framework voor het ontwikkelen van mobiele applicaties. 
+    Het stelt ontwikkelaars in staat om native-achtige mobiele apps te bouwen met behulp van JavaScript en React, een bekend JavaScript-bibliotheek voor het bouwen van gebruikersinterfaces. 
+    Wat React Native uniek maakt, is dat het een enkele codebase mogelijk maakt voor zowel Android- als iOS-platforms. Hierdoor kan het ontwikkelingsteam efficiënter werken, 
+    aangezien ze niet apart hoeven te ontwikkelen voor elk platform. React Native maakt gebruik van native componenten en biedt een snelle ontwikkelingscyclus, 
+    waardoor ontwikkelaars snel prototypes kunnen bouwen en itereren.
 
-    React Native is een open-source framework voor het ontwikkelen van mobiele applicaties.
-    Het werd ontwikkeld door Facebook en is gebaseerd op JavaScript.
+    \subsection{Flutter}
+    
+    Flutter is een ander krachtig open-source framework, ontwikkeld door Google, voor het bouwen van natively gecompileerde applicaties voor mobiele, web- en desktopplatforms. 
+    Het maakt gebruik van de programmeertaal Dart en biedt een rijke set van widgets en tools voor het ontwikkelen van mooie en snelle gebruikersinterfaces. 
+    Flutter onderscheidt zich door zijn volledig eigen set van widgets, wat resulteert in een consistente look en feel over alle platforms heen. 
+    Net als React Native stelt Flutter ontwikkelaars in staat om een enkele codebase te gebruiken voor zowel Android- als iOS-applicaties, wat de ontwikkelingstijd kan verkorten.
 
-    OpenStreetMap is een open-source kaartendatabase die door iedereen kan worden bewerkt.
-    Het is een alternatief voor Google Maps en kan gebruikt worden om kaarten te genereren.
+    \subsection{Node.js}
+    
+    Node.js is een veelgebruikte open-source, cross-platform JavaScript runtime om serverside-applicaties te bouwen. 
+    Het wordt vaak gebruikt voor het ontwikkelen van webapplicaties, API's en realtime services vanwege zijn snelle en schaalbare aard. Node.js maakt gebruik van een event-gestuurde, 
+    non-blocking I/O-model, waardoor het efficiënt kan omgaan met een groot aantal gelijktijdige verzoeken. Hoewel Node.js niet specifiek is ontworpen voor het bouwen van mobiele applicaties, 
+    kan het worden gebruikt als backend-technologie voor het verwerken van verzoeken en het leveren van gegevens aan de frontend van de applicatie. Node.js biedt een breed scala aan modules en frameworks, 
+    waardoor ontwikkelaars snel kunnen bouwen en schalen.
 
-    Google Maps API is een set van API's die ontwikkeld zijn door Google om kaarten te integreren in applicaties.
-    Deze API's kunnen gebruikt worden om kaarten te genereren, routes te berekenen, locaties te zoeken, enz.
+    De keuze voor de backend technologie is Nodejs. Vooral omdat het makkelijk integereerd met de API's en omdat ik er al ervaring mee heb.
 
-    Nodejs is een open-source, cross-platform JavaScript runtime om applicaties te bouwen. Het kan gebruikt worden om een server te bouwen voor de applicatie.
-    Zowel React Native als Flutter kunnen gebruikt worden in combinatie met Nodejs om een volledige applicatie te ontwikkelen.
-    OpenStreetMap API en Google Maps API bieden beiden npm packages aan die gebruikt kunnen worden in combinatie met Nodejs.
-
-
-\section{Populaire apps voor lopers}
-
-Er bestaan reeds verschillende applicaties voor lopers. Enkele populaire apps zijn:
-Runna, Strava, Nike Run Club, Map My Run by Under Armour, Runkeeper, Peloton, Stride, Apple Fitness Plus en anderen \autocite{Downey2023}.
-Uit deze lijst van zogezegde "beste"\@ apps voor lopers,
-is er geen enkele app die volledig gratis is \textbf{en} een route kan genereren op basis van verschillende parameters.
-Echter hebben deze apps wel andere interessante functies, zoals het bijhouden van statistieken, het delen van routes met andere gebruikers,
-het aanmaken van groepen, het volgen van andere gebruikers, het aanmaken van een trainingsschema \ldots \@
-Deze functies kunnen ook interessant zijn om te integreren in de applicatie.
-
+    Voor de frontend technologie is de keuze gevallen op React Native. Dit omdat het een populaire technologie is en omdat het een snelle ontwikkelingscyclus biedt. 
+    Hier kan ik ook mijn ervaring in JavaScript en React gebruiken.
 
 
 % Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
