@@ -31,28 +31,82 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     Vervolgens worden aanbevelingen gegenereerd op basis van de huidige GPS-positie. 
      \autocite{Loepp2018}.
 
-     Een ander relevant onderzoek is uitgevoerd door \textcite{Schulze2016}, 
-     die een model hebben voorgesteld voor het rangschikken van routes om de beste en mooiste routes te vinden die voldoen aan bepaalde basisvereisten. 
-     Dit resulteerde in de ontwikkeling van een Android applicatie die gebruik maakt van OpenStreetMap data. 
-     Met deze applicatie kunnen geoptimaliseerde routes worden gevonden met een aanpasbare lengte op elke locatie voor buitenactiviteiten zoals hardlopen, wandelen of een wandeling maken. 
-     Het model stelt gebruikers in staat om op een intuïtieve manier routes te vinden die voldoen aan hun specifieke behoeften en voorkeuren.
+     \break
 
-     Een ander interessant onderzoek, uitgevoerd door \textcite{Adwinda2020}, 
-     heeft geleid tot de ontwikkeling van een Android-applicatie die feedback geeft over de activiteiten van gebruikers tijdens het hardlopen. 
-     Deze uitgebreide applicatie biedt een breed scala aan functies, waaronder locatietracking, hartslagberekening, activiteitengrafieken, sociale functies zoals vrienden en feeds, 
-     geplande hardlooproutes, pushmeldingen, gamification en sociale media-integratie. Gebruikers kunnen gedetailleerde informatie krijgen over hun hardloopactiviteit, hartslag, 
-     hardloopgeschiedenis en prestaties. De app maakt gebruik van de Google Maps API en Firebase voor de database en messaging functies, waardoor een naadloze gebruikerservaring mogelijk is.
+    \textcite{Schulze2016} In deze scriptie wordt een model voor route-aantrekkelijkheid geïntroduceerd, 
+    samen met verschillende algoritmen om boeiende routes te genereren. 
+    Het blijkt dat het vinden van de optimale route alleen praktisch is voor zeer korte afstanden. 
+    Voor langere afstanden moet echter snelheid gepriotiseerd worden boven perfectie bij het berekenen van routes. 
+    Daarnaast werd een Android-applicatie ontwikkeld die het Driehoeksalgoritme gebruikt om gebruikers routes aan te bieden
+    vanuit elk punt in Zwitserland. Deze app kan in principe overal ter wereld worden gebruikt, 
+    zolang er voldoende gegevens beschikbaar zijn in OpenStreetMap. Over het algemeen waren de gegevens van goede kwaliteit, 
+    met minimale invloed van foutieve gegevens op de gegenereerde routes. 
+    In zeldzame gevallen van een slechte route of een pad dat niet geschikt is voor voetgangers of fietsers, 
+    kan de gebruiker eenvoudigweg om een nieuwe route vragen.
 
-    \textcite{Gallo2020} hebben een navigatie systeem ontwikkeld dat head scanning gebruikt voor navigatie feedback.
+ 
+    De app gebruikt OpenStreetMap-gegevens voor routeplanning en weergave. 
+    De gebruikersinterface biedt alle nodige tools, inclusief live tracking van gebruikers op de kaart. 
+    Gebruikers kunnen een startpunt kiezen, de gewenste lengte selecteren en een route aanvragen, 
+    die vervolgens door de server wordt gegenereerd en weergegeven. Hoewel de app momenteel geen routeberekening op het apparaat zelf uitvoert, 
+    kan dit wel, zij het langzamer dan op krachtigere computers of servers.
 
-    \textcite{Novack2018} hebben een systeem ontwikkeld dat gebruik maakt van een algoritme dat rekening houdt met de voorkeuren van de gebruiker.
-    De voorkeuren zijn, onder andere, het vermijden van drukke straten of het kiezen van een route met een mooi uitzicht.
-    Het systeem maakt gebruik van OpenStreetMap data \autocite{Novack2018}.
+    
+    Voor de server wordt Tomcat gebruikt, die twee hoofdfuncties heeft: 
+    het hosten van voorbewerkte gegevens en het genereren van routes op aanvraag. 
+    Gebruikers sturen een verzoek met de benodigde parameters voor een route, 
+    die de server vervolgens genereert met behulp van het Driehoeksalgoritme. 
+    Alle gegevens zijn voor Zwitserland voorbewerkt, maar theoretisch kunnen routes in elk gebied ter wereld worden gegenereerd, 
+    mits OpenStreetMap voldoende gegevens heeft.
+    \autocite{Schulze2016}.
+
+    \break
+
+    Een ander interessant onderzoek, uitgevoerd door \textcite{Adwinda2020}, 
+    heeft geleid tot de ontwikkeling van een Android-applicatie die feedback geeft over de activiteiten van gebruikers tijdens het hardlopen. 
+    Deze uitgebreide applicatie biedt een breed scala aan functies, waaronder locatietracking, hartslagberekening, activiteitengrafieken, sociale functies zoals vrienden en feeds, 
+    geplande hardlooproutes, pushmeldingen, gamification en sociale media-integratie. Gebruikers kunnen gedetailleerde informatie krijgen over hun hardloopactiviteit, hartslag, 
+    hardloopgeschiedenis en prestaties. De app maakt gebruik van de Google Maps API en Firebase voor de database en messaging functies, waardoor een naadloze gebruikerservaring mogelijk is.
+
+    \break
+
+    \textcite{Gallo2020} 
+    In dit paper wordt RunAhead gepresenteerd, 
+    een systeem dat head scanning gebruikt als een nieuwe manier om navigatie-informatie op te vragen tijdens het hardlopen. 
+    Met RunAhead worden drie verschillende manieren geboden om feedback te geven over de kwaliteit van het bekeken pad: 
+    twee op audio gebaseerd (Muziek en Audiocues) en één op haptische (trillingen). 
+    RunAhead is getest en vergeleken met een basislijnsysteem dat spraakgestuurde navigatie biedt. 
+    De analyse van de verzamelde gegevens toonde aan dat twee versies van RunAhead (Muziek en Haptisch) de voorkeur hadden boven de basislijn. 
+    Over het algemeen werd de Haptische versie als minst opdringerig ervaren en kwam als eerste naar voren. 
+    In toekomstig werk wordt gepland om RunAhead te verbeteren, rekening houdend met inzichten uit deze studie. 
+    Er wordt ook gedacht aan het testen van het systeem in andere contexten en het verkennen van de geschiktheid ervan als verkennend instrument, 
+    niet alleen voor turn-by-turn begeleiding.
+
+    \break
+
+    \textcite{Novack2018} 
+    Dit systeem presenteert een methode om aangename wandelroutes te genereren op basis van OpenStreetMap (OSM) data. 
+    Gebruikers kunnen interactief de nadruk leggen op factoren zoals groene gebieden, 
+    sociale plaatsen en straten met minder verkeerslawaai bij het creëren van een aangepaste route. 
+    Het systeem biedt informatie over de lengte, groenheid, aantal sociale plaatsen en totale lengte van lawaaierige straten 
+    voor zowel de kortste als aangepaste routes, zodat gebruikers bewustere beslissingen kunnen nemen. 
+    Hoewel het systeem momenteel geen rekening houdt met de tijd van de dag bij het berekenen van routes, 
+    kan dit in de toekomst worden verbeterd met beschikbare openingstijden van sociale plaatsen. 
+    Omdat het systeem volledig gebaseerd is op OSM-data, kan het potentieel wereldwijd worden geïmplementeerd, 
+    maar kan het ook afhankelijk zijn van de nauwkeurigheid en beschikbaarheid van OSM-gegevens. 
+    Het systeem is nuttig, transparant en intuïtief volgens gebruikersfeedback, 
+    waarbij de enquêteresultaten ook richting geven voor verdere ontwikkelingen.
+    \autocite{Novack2018}.
+
+    \section{Weather prediction}
+
+    Het weer is een belangrijke factor bij het plannen van een hardlooproute. Het kan de prestaties van de loper beïnvloeden en in extreme gevallen de veiligheid in gevaar brengen.
 
     \section{Doelpubliek}
 
     Welk doelpubliek heeft interesse in een route-genererende applicatie? Welke features zijn belangrijk voor dit doelpubliek?
     Hier wordt onderzocht welke doelgroepen interesse hebben in een dergelijke applicatie.
+
 
     De heterogeniteit onder hardlopers maakt het nuttig en aantrekkelijk om hen in groepen te segmenteren om hun AOI's te begrijpen. 
     Segmentatie van consumenten in sport is uitgebreid gedocumenteerd, waarbij studies meestal onderscheid maken tussen consumenten 
@@ -63,6 +117,7 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     Deze studies benadrukken allemaal het belang van AIO's om waardevolle inzichten te krijgen in de behoeften van hardlopers 
     en om typologieën van hardlopers te creëren \textcite{Janssen2020}. 
 
+
     In dit onderzoek werd een online vragenlijst, de Eindhoven Running Survey 2016 (ERS2016), 
     gebruikt om gegevens te verzamelen onder deelnemers van het hardloopevenement Eindhoven Marathon. 
     Een totaal van 3727 deelnemers voltooide de vragenlijst volledig (responspercentage van 20,4 \%). 
@@ -71,6 +126,7 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     De sociodemografische kenmerken van de respondenten waren vergelijkbaar met eerdere grootschalige hardloopstudies in West-Europa.\textcite{Janssen2020}.
     Dit betekent dat de resultaten van dit onderzoek waarschijnlijk representatief zijn voor de hardlooppopulatie in West-Europa.
 
+
     In dit onderzoek werden 4 types hardlopers geïdentificeerd:
     \begin{itemize}
         \item Recreatieve individuele hardlopers
@@ -78,6 +134,7 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
         \item Individuele competitieve hardlopers
         \item Toegewijde hardlopers
     \end{itemize}
+
 
     Binnen deze 4 groepen van hardlopers zijn er verschillen in het gebruik van apps en andere apparatuur. 
     De resultaten toonden significante variaties (alleen significante effecten worden beschreven). 
@@ -92,6 +149,7 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     Ten slotte hadden de toegewijde hardlopers de minste app-gebruikers, 
     en samen met de individuele competitieve hardlopers hadden zij de hoogste proportie gebruikers van sporthorloges.
 
+
     De resultaten van dit onderzoek tonen aan dat er verschillende groepen hardlopers zijn die verschillende behoeften hebben. 
     Het is belangrijk om deze verschillen in overweging te nemen bij het ontwikkelen van een route-genererende applicatie.
     Zo kan er bijvoorbeeld een functie toegevoegd worden die het mogelijk maakt om routes te delen met vrienden,
@@ -103,6 +161,7 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     Hieronder zitten niet per se enkel verschillen in het gebruik van apps en andere apparatuur, maar ook verschillen in de manier waarop ze gemotiveerd worden.
     Het is belangrijk om deze verschillen in overweging te nemen bij het ontwikkelen van een route-genererende applicatie.
 
+
     Hardlopen wordt gekenmerkt door zijn lage drempel en aantrekkelijkheid voor een breed scala aan mensen. 
     Deze heterogeniteit onder hardlopers komt ook tot uiting in de grote aantallen traditionele en thematische hardloopevenementen. 
     Er is echter een hoog uitvalpercentage onder amateurhardlopers, voornamelijk als gevolg van hardloopgerelateerde blessures en verlies van motivatie. 
@@ -111,7 +170,9 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     Begrip van hoe amateurhardlopers dagelijkse barrières ervaren en hoe dit hun potentiële runs beïnvloedt, kan waardevol zijn 
     om te identificeren hoe ontwerp- en interactieve technologieën hardlopers beter kunnen ondersteunen voorbij de eigenlijke run.\textcite{Menheere2020}.
 
+
     In het onderzoek van \textcite{Menheere2020} werden verschillende ontwerpaanbevelingen gedaan. Hieronder worden enkele van deze aanbevelingen besproken.
+
 
     Ontwerpaanbeveling 1: Begeleid zelfspraak en versterk de verwachte beloning van het hardlopen door middel van ontwerp. 
     Illustratief ontwerpconcept: Een interactieve sportmaatje dat dit gesprek begint kan helpen om deze zelfspraak naar een daadwerkelijk gesprek te verplaatsen, 
@@ -120,6 +181,7 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     trilmotor, Bluetooth low energy en een ingebouwde batterij. Een andere strategie zou kunnen bestaan uit het verminderen van de hoeveelheid 
     negatieve zelfspraak door middel van een interactief apparaat dat zelfbewustzijn ondersteunt en die negatieve gedachten omkeert.
 
+
     Ontwerpaanbeveling 2: Maak de voorbereidingsrituelen interessanter of plezieriger door middel van ontwerp. 
     Illustratief ontwerpconcept: Een interactieve kledinghanger die de gebruiker overtuigt om hun sportkleding aan te trekken. 
     De gebruiker hangt hun sportkleding aan de hanger, die hardloopintenties detecteert via een verbinding met de agenda van de gebruikers. 
@@ -127,10 +189,13 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     Als de gebruiker de kleding uittrekt om te gaan sporten, verschijnt er een motiverend citaat op een geïntegreerd e-inktscherm. 
     Echter, wanneer de sportkleding niet op tijd wordt uitgetrokken, zal de grootte van de hanger een punt bereiken waarop de sportkleding op de grond valt.
 
+
+
     Ontwerpaanbeveling 3: Bied tools aan om hardlopers te helpen hun hardloopsessie van tevoren te visualiseren. 
     Illustratief ontwerpconcept: Een multisensorisch object dat sensaties oproept die verband houden met iemands persoonlijke hardloopervaring. 
     Tussen de runs door zal het object het geluid van je voetstappen en omgeving afspelen, afhankelijk van de vorige hardlooproute. 
     Het object zal ook natuurlijke geuren verspreiden (bijvoorbeeld bomen, modder, gras) en lichtpatronen gebruiken om hardloopbeelden op te roepen.
+
 
     Ontwerpaanbeveling 4: Help hardlopers negatieve emoties, zoals frustratie en onzekerheid, die ze ervaren tijdens het hardlopen te overwinnen 
     door middel van ontwerp. 
@@ -138,6 +203,7 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     een gegamificeerde applicatie die de hardloper onderdompelt in een post-apocalyptische omgeving. 
     Door hun missie en muziek via koptelefoon te horen, moet de speler zombies vermijden en goederen verzamelen om te overleven. 
     Het gamificeren van de hardloopinspanning transformeert negatieve emoties in positieve gevoelens \autocite{Menheere2020}.
+
 
     \section{Technologie}
 
@@ -150,14 +216,14 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     Het stelt ontwikkelaars in staat om native-achtige mobiele apps te bouwen met behulp van JavaScript en React, een bekend JavaScript-bibliotheek voor het bouwen van gebruikersinterfaces. 
     Wat React Native uniek maakt, is dat het een enkele codebase mogelijk maakt voor zowel Android- als iOS-platforms. Hierdoor kan het ontwikkelingsteam efficiënter werken, 
     aangezien ze niet apart hoeven te ontwikkelen voor elk platform. React Native maakt gebruik van native componenten en biedt een snelle ontwikkelingscyclus, 
-    waardoor ontwikkelaars snel prototypes kunnen bouwen en itereren.
+    waardoor ontwikkelaars snel prototypes kunnen bouwen en itereren. \autocite{react_native_docs}.
 
     \subsection{Flutter}
     
     Flutter is een ander krachtig open-source framework, ontwikkeld door Google, voor het bouwen van natively gecompileerde applicaties voor mobiele, web- en desktopplatforms. 
     Het maakt gebruik van de programmeertaal Dart en biedt een rijke set van widgets en tools voor het ontwikkelen van mooie en snelle gebruikersinterfaces. 
     Flutter onderscheidt zich door zijn volledig eigen set van widgets, wat resulteert in een consistente look en feel over alle platforms heen. 
-    Net als React Native stelt Flutter ontwikkelaars in staat om een enkele codebase te gebruiken voor zowel Android- als iOS-applicaties, wat de ontwikkelingstijd kan verkorten.
+    Net als React Native stelt Flutter ontwikkelaars in staat om een enkele codebase te gebruiken voor zowel Android- als iOS-applicaties, wat de ontwikkelingstijd kan verkorten. \autocite{flutter_docs}.
 
     \subsection{Node.js}
     
@@ -165,12 +231,34 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     Het wordt vaak gebruikt voor het ontwikkelen van webapplicaties, API's en realtime services vanwege zijn snelle en schaalbare aard. Node.js maakt gebruik van een event-gestuurde, 
     non-blocking I/O-model, waardoor het efficiënt kan omgaan met een groot aantal gelijktijdige verzoeken. Hoewel Node.js niet specifiek is ontworpen voor het bouwen van mobiele applicaties, 
     kan het worden gebruikt als backend-technologie voor het verwerken van verzoeken en het leveren van gegevens aan de frontend van de applicatie. Node.js biedt een breed scala aan modules en frameworks, 
-    waardoor ontwikkelaars snel kunnen bouwen en schalen.
+    waardoor ontwikkelaars snel kunnen bouwen en schalen. \autocite{nodejs_docs}.
 
-    De keuze voor de backend technologie is Nodejs. Vooral omdat het makkelijk integereerd met de API's en omdat ik er al ervaring mee heb.
+    \subsection{Expressjs}
+
+    Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. 
+    It is designed to build single-page, multi-page, and hybrid web applications, as well as RESTful APIs. Express is built on top of Node.js and provides a simple and intuitive API for building web servers and applications. \autocite{express_docs}.
+
+    \subsection{MySQL}
+
+    MySQL is een populaire open-source relationele databasebeheersysteem dat wordt gebruikt voor het opslaan en beheren van gestructureerde gegevens.
+    Het biedt een krachtige set van functies, waaronder transactiebeheer, gegevensintegriteit, beveiliging en schaalbaarheid. MySQL wordt vaak gebruikt in combinatie met Node.js voor het bouwen van webapplicaties en API's vanwege zijn compatibiliteit en prestaties. 
+    \autocite{mysql_docs}.
+
+    \break
+
+    De keuze voor de backend technologie is Nodejs. Vooral omdat het makkelijk integereerd met de API's en omdat de ontwikkelaar hier al ervaring mee heeft.
+
 
     Voor de frontend technologie is de keuze gevallen op React Native. Dit omdat het een populaire technologie is en omdat het een snelle ontwikkelingscyclus biedt. 
-    Hier kan ik ook mijn ervaring in JavaScript en React gebruiken.
+    Hier kan de ontwikkelaar ook zijn ervaring in JavaScript en React gebruiken.
+
+    \section{Kosten}
+
+    De kosten voor het ontwikkelen van een route-genererende applicatie kunnen variëren afhankelijk van verschillende factoren, zoals de complexiteit van de applicatie, de functionaliteiten,
+    de technologieën die worden gebruikt \ldots Hieronder worden enkele van de kosten besproken die gepaard gaan met het ontwikkelen van deze applicatie.
+
+
+
 
 
 % Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
