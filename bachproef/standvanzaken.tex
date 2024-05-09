@@ -31,7 +31,7 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     Vervolgens worden aanbevelingen gegenereerd op basis van de huidige GPS-positie. 
      \autocite{Loepp2018}.
 
-     \break
+     \hspace{2cm}
 
     \textcite{Schulze2016} In deze scriptie wordt een model voor route-aantrekkelijkheid geïntroduceerd, 
     samen met verschillende algoritmen om boeiende routes te genereren. 
@@ -60,7 +60,7 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     mits OpenStreetMap voldoende gegevens heeft.
     \autocite{Schulze2016}.
 
-    \break
+    \hspace{2cm}
 
     Een ander interessant onderzoek, uitgevoerd door \textcite{Adwinda2020}, 
     heeft geleid tot de ontwikkeling van een Android-applicatie die feedback geeft over de activiteiten van gebruikers tijdens het hardlopen. 
@@ -68,7 +68,7 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     geplande hardlooproutes, pushmeldingen, gamification en sociale media-integratie. Gebruikers kunnen gedetailleerde informatie krijgen over hun hardloopactiviteit, hartslag, 
     hardloopgeschiedenis en prestaties. De app maakt gebruik van de Google Maps API en Firebase voor de database en messaging functies, waardoor een naadloze gebruikerservaring mogelijk is.
 
-    \break
+    \hspace{2cm}
 
     \textcite{Gallo2020} 
     In dit paper wordt RunAhead gepresenteerd, 
@@ -82,7 +82,7 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     Er wordt ook gedacht aan het testen van het systeem in andere contexten en het verkennen van de geschiktheid ervan als verkennend instrument, 
     niet alleen voor turn-by-turn begeleiding.
 
-    \break
+    \hspace{2cm}
 
     \textcite{Novack2018} 
     Dit systeem presenteert een methode om aangename wandelroutes te genereren op basis van OpenStreetMap (OSM) data. 
@@ -101,6 +101,23 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     \section{Weather prediction}
 
     Het weer is een belangrijke factor bij het plannen van een hardlooproute. Het kan de prestaties van de loper beïnvloeden en in extreme gevallen de veiligheid in gevaar brengen.
+
+    Deze tekst door \textcite{dewi2019} illustreert hoe OpenWeatherMap kan gebruikt worden om real-time weerdata te publiceren op Twitter.
+    Door platforms zoals Twitter te benutten, wordt directe toegang tot actuele weersinformatie geboden, waardoor het publiek tijdig kan reageren op veranderende weersomstandigheden en potentieel gevaarlijke situaties.
+    Met behulp van Python-programmering en gerelateerde tools zoals OAuth, Tweepy en OpenWeatherMap API, wordt het mogelijk om automatisch actuele weergegevens te verzamelen en te verspreiden via sociale media. 
+    Dit opent de deur naar efficiënte communicatie van weersomstandigheden, waardoor individuen hun activiteiten kunnen plannen en zich kunnen voorbereiden op weergebonden risico's.
+
+    De conclusie benadrukt de waarde van deze real-time weergegevens in het informeren van mensen en het ondersteunen van weloverwogen beslissingen in het dagelijks leven. 
+    Daarnaast wijst het op de noodzaak van verder onderzoek naar geavanceerde algoritmen voor het voorspellen en analyseren van weergegevens, 
+    met het oog op mogelijke integratie in mobiele applicaties om weersinformatie nog toegankelijker te maken voor het grote publiek.
+
+    Deze bevindingen belichten de opkomst van technologisch gedreven benaderingen in weersvoorspellingen, waarbij sociale media en programmeertools een essentiële rol spelen 
+    in het efficiënt delen van weergegevens en het beschermen van gemeenschappen tegen de risico's van extreme weersomstandigheden.
+    \autocite{dewi2019}
+
+    Uit deze tekst blijkt dat het integreren van weersvoorspellingen in een route-genererende applicatie een belangrijke toegevoegde waarde kan bieden voor hardlopers. 
+    Verder is OpenWeatherMap een betrouwbare bron van weer-gegevens die kan worden gebruikt om real-time informatie te verstrekken over weersomstandigheden.
+
 
     \section{Doelpubliek}
 
@@ -244,10 +261,9 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     Het biedt een krachtige set van functies, waaronder transactiebeheer, gegevensintegriteit, beveiliging en schaalbaarheid. MySQL wordt vaak gebruikt in combinatie met Node.js voor het bouwen van webapplicaties en API's vanwege zijn compatibiliteit en prestaties. 
     \autocite{mysql_docs}.
 
-    \break
+    \hspace{2cm}
 
     De keuze voor de backend technologie is Nodejs. Vooral omdat het makkelijk integereerd met de API's en omdat de ontwikkelaar hier al ervaring mee heeft.
-
 
     Voor de frontend technologie is de keuze gevallen op React Native. Dit omdat het een populaire technologie is en omdat het een snelle ontwikkelingscyclus biedt. 
     Hier kan de ontwikkelaar ook zijn ervaring in JavaScript en React gebruiken.
@@ -256,6 +272,55 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
 
     De kosten voor het ontwikkelen van een route-genererende applicatie kunnen variëren afhankelijk van verschillende factoren, zoals de complexiteit van de applicatie, de functionaliteiten,
     de technologieën die worden gebruikt \ldots Hieronder worden enkele van de kosten besproken die gepaard gaan met het ontwikkelen van deze applicatie.
+
+    \subsection{Overpass API (OpenStreetMap)}
+
+    Deze API biedt gratis toegang tot OpenStreetMap-gegevens, waaronder kaarten, routes en locatiegegevens. Echter omdat dit een gratis service is,
+    zijn er beperkingen op het aantal verzoeken dat kan worden gedaan. Voor grotere hoeveelheden verzoeken is het beter om zelf een server te hosten met de OpenStreetMap-gegevens.
+    Wat extra kosten met zich meebrengt voor het hosten van de server.
+
+    \subsection{Google Maps API}
+
+    De Google Maps API biedt toegang tot geavanceerde kaart- en locatiediensten, waaronder routebeschrijvingen, geocoding en plaatsen.
+    De kosten voor het gebruik van de Google Maps API variëren afhankelijk van het aantal verzoeken en de services die worden gebruikt.
+    Google biedt een gratis tegoed van \$200 per maand, maar voor grotere hoeveelheden verzoeken kunnen extra kosten in rekening worden gebracht.
+    Voor het genereren van routes is de prijs \$5 of \$10 per 1000 verzoeken, afhankelijk van de gekozen complexiteit van de route.
+    Dezelfde prijs van \$5 per 1000 verzoeken geldt voor het ophalen van de hoogtegegevens van de Google Maps API.
+
+    \subsection{OpenWeatherMap API}
+
+    De OpenWeatherMap API biedt toegang tot actuele en historische weergegevens, waaronder temperatuur, neerslag, wind en luchtdruk.
+    De kosten voor het gebruik van de OpenWeatherMap API variëren afhankelijk van het aantal verzoeken.
+    OpenWeatherMap biedt een gratis abonnement met beperkte toegang tot de API, maar voor grotere hoeveelheden verzoeken kunnen extra kosten in rekening worden gebracht.
+    Gratis abonnementen bieden toegang tot 60 verzoeken per minuut, 1 miljoen verzoeken per maand en 5 dagen historische gegevens.
+    Het is 0.0014 euro per API call over de limiet. Voor deze applicatie is het genoeg om enkel het huidige weer op te vragen, wat binnen het gratis abonnement zit.
+
+
+    \subsection{Hosting}
+
+    Voor het hosten van de backend-server en de database zijn er verschillende opties beschikbaar, waaronder cloudproviders zoals AWS, Google Cloud en Firebase.
+    Het is ook altijd mogelijk om op een eigen server te hosten, maar dit brengt extra kosten met zich mee voor de hardware en het onderhoud.
+    De kosten voor het hosten van een server variëren afhankelijk van de gekozen provider, de serverconfiguratie en het dataverkeer.
+    Voor deze applicatie is het aan te raden om te kiezen voor een cloudprovider, omdat dit schaalbaar en kostenefficiënt is.
+    Deze cloud-providers bieden verschillende prijsmodellen, waaronder pay-as-you-go en vaste prijzen.
+    Op Firebase kost het hosten van een server ongeveer \$0.026/GB voor opslag en \$0.15/GB voor data traffic.
+    Bij Google Cloud kost het \$3.00 per miljoen API calls, wanneer er tussen 2 miljoen  en 1 miljard API calls per maand zijn.
+    Voor AWS is de prijsstructuur als volgt:
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{lc}
+        \toprule
+        \textbf{Bereik} & \textbf{Prijs (per miljoen)} \\
+        \midrule
+        Eerste 333 miljoen & \$3.50 \\
+        Volgende 667 miljoen & \$2.80 \\
+        Volgende 19 miljard & \$2.38 \\
+        Over 20 miljard & \$1.51 \\
+        \bottomrule
+        \end{tabular}
+        \caption{Prijsstructuur}
+        \label{tab:prijsstructuur}
+    \end{table}
 
 
 

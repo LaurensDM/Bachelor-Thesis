@@ -61,42 +61,49 @@ De flow van de applicatie begint bij het inloggen op de applicatie, waarna de ge
 
 De mock-ups van de applicatie zijn gemaakt met behulp van moqups, een online tool voor het maken van wireframes en mock-ups. De mock-ups zijn bedoeld als visuele representatie van het ontwerp van de applicatie en dienen als leidraad voor de ontwikkeling ervan.
 
-    \begin{figure}[h!]
-        \includegraphics[width=\linewidth]{./graphics/login_Mockup.png}
+    \begin{figure}[htbp]
+        \includegraphics[width=20em]{./graphics/login_Mockup.png}
+        \centering
         \caption{Mock up Login}
         \label{fig:loginMockup}
     \end{figure}
 
-    \begin{figure}[h!]
-        \includegraphics[width=\linewidth]{./graphics/register_Mockup.png}
+    \begin{figure}[htbp]
+        \includegraphics[width=20em]{./graphics/register_Mockup.png}
+        \centering
         \caption{Mock up Register}
         \label{fig:registerMockup}
     \end{figure}
     
-    \begin{figure}[h!]
-        \includegraphics[width=\linewidth]{./graphics/drawer_Mockup.png}
+    \begin{figure}[htbp]
+        \includegraphics[width=20em]{./graphics/drawer_Mockup.png}
+        \centering
         \caption{Mock up Drawer menu}
         \label{fig:DrawerMockup}
     \end{figure}
 
-    \begin{figure}[h!]
-        \includegraphics[width=\linewidth]{./graphics/routeView_Mockup.png}
+    \begin{figure}[htbp]
+        \includegraphics[width=20em]{./graphics/routeView_Mockup.png}
+        \centering
         \caption{Mock up Route View}
         \label{fig:routeViewMockup}
     \end{figure}
 
-    \begin{figure}[h!]
-        \includegraphics[width=\linewidth]{./graphics/createRoute_Mockup.png}
+    \begin{figure}[htbp]
+        \includegraphics[width=20em]{./graphics/createRoute_Mockup.png}
+        \centering
         \caption{Mock up Route Create}
         \label{fig:createRouteMockup}
     \end{figure}
 
-    \begin{figure}[h!]
-        \includegraphics[width=\linewidth]{./graphics/route_Mockup.png}
+    \begin{figure}[htbp]
+        \includegraphics[width=20em]{./graphics/route_Mockup.png}
+        \centering
         \caption{Mock up Route}
         \label{fig:routeMockup}
     \end{figure}
 
+    \pagebreak
 
     \section{Proof of Concept}
 
@@ -108,19 +115,69 @@ De mock-ups van de applicatie zijn gemaakt met behulp van moqups, een online too
 
     \subsection{Frontend}
 
-    react-native-paper en react-native-navigation worden gebruikt voor styling en navigatie. De applicatie is opgedeeld in verschillende componenten, zoals HomeScreen, RouteScreen, SettingsScreen, SavedRoutesScreen, RouteCreateScreen en RouteDetailsScreen. De navigatie tussen de verschillende schermen gebeurt via een drawer menu. De applicatie maakt gebruik van Auth0 voor authenticatie en autorisatie. De gebruiker kan inloggen met zijn e-mail en wachtwoord en wordt doorgestuurd naar het HomeScreen. Gegevens worden opgeslagen in de lokale opslag van de mobiele applicatie via AsyncStorage en gesynchroniseerd met de backend wanneer er een internetverbinding beschikbaar is.
+    react-native-paper en react-native-navigation worden gebruikt voor styling en navigatie. 
+    De applicatie is opgedeeld in verschillende componenten, 
+    zoals HomeScreen, RouteScreen, SettingsScreen, SavedRoutesScreen, RouteCreateScreen en RouteDetailsScreen. 
+    De navigatie tussen de verschillende schermen gebeurt via een drawer menu. 
+    De applicatie maakt gebruik van Auth0 voor authenticatie en autorisatie. 
+    De gebruiker kan inloggen met zijn e-mail en wachtwoord en wordt doorgestuurd naar het HomeScreen. 
+    Gegevens worden opgeslagen in de lokale opslag van de mobiele applicatie via AsyncStorage 
+    en gesynchroniseerd met de backend wanneer er een internetverbinding beschikbaar is.
 
-    Om een route te genereren is een internetverbinding nodig, maar een gebruiker kan een bestaande route terug ophalen en bekijken zonder internetverbinding.
+    Om een route te genereren is een internetverbinding nodig, 
+    maar een gebruiker kan een bestaande route terug ophalen en bekijken zonder internetverbinding.
     
     Hier is een overzicht van de verschillende schermen van de applicatie.
     
+    Eerst wordt de gebruiker gevraagd om in te loggen. Hierbij wordt de gebruiker doorverwezen naar een browser waar Auth0 de authenticatie regelt.
+
+    \begin{figure}[htbp]
+        \includegraphics[width=20em]{./graphics/login.png}
+        \centering
+        \caption{Login}
+        \label{fig:login}
+    \end{figure}
+
+    Vervolgens komt de gebruiker op het HomeScreen terecht. Voor de Proof of Concept staat hiet niet veel, 
+    maar in de toekomst kan hier data van de gebruiker getoond worden.
+
+    \begin{figure}[htbp]
+        \includegraphics[width=20em]{./graphics/home.png}
+        \centering
+        \caption{Home}
+        \label{fig:home}
+    \end{figure}
+
+    Via het drawer menu kan de gebruiker navigeren naar de verschillende schermen van de applicatie.
+
+    \begin{figure}[htbp]
+        \includegraphics[width=20em]{./graphics/drawer.png}
+        \centering
+        \caption{Drawer}
+        \label{fig:drawer}
+    \end{figure}
+
+    Op het Route scherm kan de gebruiker de opgeslagen routes bekijken en beheren.
+
     \subsection{Backend}
     
-    De backend is ontwikkeld met behulp van Node.js en Express.js en communiceert met de frontend via een RESTful API. Auth0 wordt gebruikt voor authenticatie en autorisatie. De gegevens worden opgeslagen in een MySQL database. De backend communiceert verder met de Overpass API, Google Maps API en OpenWeatherMap API voor het genereren van looproutes en het opvragen van weersverwachtingen.
+    De backend is ontwikkeld met behulp van Node.js en Express.js en communiceert met de frontend via een RESTful API. 
+    Auth0 wordt gebruikt voor authenticatie en autorisatie. De gegevens worden opgeslagen in een MySQL database. 
+    De backend communiceert verder met de Overpass API, Google Maps API en OpenWeatherMap API voor het genereren van looproutes en het opvragen van weersverwachtingen.
     
     Hier is een overzicht van de verschillende endpoints van de API.
     
-    Het genereren van een route gebeurt in verschillende stappen. De API krijgt eerst de nodige data binnen van de frontend, zoals de locatie van de gebruiker, de gewenste afstand of tijd van de route en verdere geavanceerde opties. De API valideert eerst of alle nodige parameters aanwezig zijn met behulp van express-validator. Vervolgens wordt een functie aangeroepen die de Overpass API aanspreekt om waypoints te genereren op basis van de gegeven parameters. Functies die de Overpass API en Google Maps API aanspreken zijn gedefinieerd in een helpers folder, zodat er makkelijk integraties met andere platformen kunnen worden toegevoegd. Met de waypoints wordt een for-loop gestart die de afstand tussen de waypoints berekent. Als de afstand tussen de waypoints groter is dan de gewenste afstand van de route, wordt de loop beëindigd zonder dat alle waypoints zijn inbegrepen en wordt de route berekend met de Google Maps API. In het geval dat er geen waypoints zijn teruggevonden, wordt een waypoint gegenereerd op basis van de locatie van de gebruiker, die zich dan op een aantal kilometers van de startlocatie bevindt. De route wordt opgeslagen in de database en teruggegeven aan de frontend.
+    Het genereren van een route gebeurt in verschillende stappen. 
+    De API krijgt eerst de nodige data binnen van de frontend, zoals de locatie van de gebruiker, de gewenste afstand of tijd van de route en verdere geavanceerde opties. 
+    De API valideert eerst of alle nodige parameters aanwezig zijn met behulp van express-validator. 
+    Vervolgens wordt een functie aangeroepen die de Overpass API aanspreekt om waypoints te genereren op basis van de gegeven parameters. 
+    Functies die de Overpass API en Google Maps API aanspreken zijn gedefinieerd in een helpers folder, zodat er makkelijk integraties met andere platformen kunnen worden toegevoegd. 
+    Met de waypoints wordt een for-loop gestart die de afstand tussen de waypoints berekent. Ook wordt hier de hoogte van de verschillende waypoints berekent en worden waypoints gefiltert 
+    op basis van de gewenste hoogte die de gebruiker heeft gespecifieerd.
+    Als de afstand tussen de waypoints groter is dan de gewenste afstand van de route,
+    wordt de loop beëindigd zonder dat alle waypoints zijn inbegrepen. 
+    In het geval dat er geen waypoints zijn teruggevonden, wordt een waypoint gegenereerd op basis van de locatie van de gebruiker, die zich dan op een aantal kilometers van de startlocatie bevindt. 
+    De route wordt opgeslagen in de database en teruggegeven aan de frontend.
 
     \pagebreak
 
