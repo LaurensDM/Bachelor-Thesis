@@ -1,0 +1,53 @@
+\chapter{\IfLanguageName{dutch}{Verbeteringen}{Improvements}}%
+\label{ch:verbeteringen}
+
+\section{Inleiding}
+Dit hoofdstuk biedt een diepgaande verkenning van potentiële verbeteringen voor de applicatie, gebaseerd op een grondige analyse van de literatuur en inzichten verworven tijdens de ontwikkelingsfase. Concreet zijn er 3 concepten die kunnen worden toegevoegd aan de applicatie. Deze concepten zijn: gebruikerservaring, gegevensverzameling en -presentatie, en algemene optimalisaties. Elk concept wordt in detail besproken, met suggesties voor implementatie en mogelijke voordelen voor de gebruiker.
+
+\section{Betere Gebruikers ervaring}
+
+\subsection{Gebruiksvriendelijkheid}
+
+DDe huidige Proof of Concept benut de mogelijkheden voor gebruiksvriendelijkheid nog niet volledig. Er is enkel een focus naar Android systemen, maar het zou mogelijk moeten zijn om de applicatie te laten werken op iOS systemen. Ook is er geen rekening gehouden met de grootte van de schermen van de toestellen. Dit kan worden verbeterd door de applicatie te optimaliseren voor verschillende schermgroottes en besturingssystemen. Dit kan worden gedaan door gebruik te maken van responsive design. Dit is een techniek waarbij de applicatie zich aanpast aan de grootte van het scherm. 
+
+Verder is de applicatie ontwikkeld in het Engels. Dit kan worden uitgebreid naar meerdere talen. Dit kan worden gedaan door gebruik te maken van een vertaalbibliotheek zoals i18n. Dit is een internationale standaard voor het vertalen van applicaties. Ook de uitdrukking van afstanden en snelheden kan worden aangepast aan de lokale standaarden.
+
+\subsection{Ontwerpen}
+
+Ondanks dat er in de literatuur designoverwegingen zijn besproken, zijn deze nog niet geïntegreerd in de Proof of Concept. De applicatie kan worden verbeterd door deze design overwegingen toe te passen. Het implementeren van motivatie- en beloningssystemen, muziekintegratie, gamification en sociale interactie kan de gebruikerservaring verder verrijken. Een beloningssysteem op basis van punten, integratie met populaire muziekstreamingdiensten zoals Spotify, en het toevoegen van gamification-elementen zoals uitdagingen en prestatiebadges kunnen gebruikers stimuleren om actief te blijven en de app regelmatig te gebruiken.
+
+Elk van deze design overwegingen kan worden toegevoegd aan de applicatie. Zo kan er een beloningssysteem worden toegevoegd waarbij de gebruiker punten kan verdienen door te lopen. Deze punten kunnen dan worden gebruikt om een online ranking systeem op te stellen met andere gebruikers.Ook kan er muziek worden toegevoegd aan de applicatie, dit kan makkelijk met een Spotify integratie. Dit kan de gebruiker motiveren om te blijven lopen. Gamification kan worden toegevoegd door de gebruiker te belonen voor het voltooien van bepaalde doelen. Sociale interactie kan worden toegevoegd door de gebruiker de mogelijkheid te geven om zijn/haar loopprestaties te delen met vrienden. Eventueel kan er een chatfunctie worden toegevoegd voor interactie met andere gebruikers.
+
+\section{Verzamelen en tonen van data}
+
+\subsection{Data verzamelen}
+
+DMomenteel mist de Proof of Concept de mogelijkheid om tijdens activiteiten gegevens te verzamelen, waardoor er een kans ligt voor verbetering. Het implementeren van functionaliteiten voor het verzamelen van gegevens, zoals snelheid, afstand en tijd tijdens het lopen, kan waardevolle inzichten bieden aan gebruikers en hun prestaties volgen en verbeteren. Dit kan worden gedaan door gebruik te maken van sensoren zoals GPS en accelerometers. Deze sensoren kunnen worden gebruikt om gegevens te verzamelen over de locatie, snelheid en afstand van de gebruiker tijdens het lopen.
+
+Het is ook mogelijk om een integratie te ontwikkelen met Strava. Strava is een applicatie die wordt gebruikt door sporters om hun prestaties bij te houden. Door een integratie te ontwikkelen met Strava kan de gebruiker zijn/haar prestaties delen met andere gebruikers. Dit kan de gebruiker motiveren om te blijven lopen.
+
+\subsection{Data tonen}
+
+Het home scherm van de Proof of Concept is ontwikkeld met het tonen van data in het achterhoofd. Er was een gebrek aan tijd om deze functionaliteiten volledig te implementeren. Er is ruimte voor uitbreiding met meer gedetailleerde gegevens. Het tonen van informatie zoals gemiddelde snelheid, verbrande calorieën en hartslagzones kan gebruikers een beter inzicht geven in hun activiteiten en hen motiveren om hun doelen te bereiken. Daarnaast kan het integreren van sociale functies zoals het delen van prestaties en het vergelijken van activiteiten met vrienden de betrokkenheid van gebruikers vergroten.
+
+\section{Algemene verbeteringen}
+
+\subsection{Code kwaliteit}
+
+Een belangrijk aspect dat verbeterd kan worden, is de codekwaliteit van de Proof of Concept. Momenteel ontbreekt het aan een consistente structuur en adequate documentatie. Door de code te herschikken volgens vastgestelde conventies en voldoende commentaar toe te voegen, kan de leesbaarheid en onderhoudbaarheid worden verbeterd.  Dit kan worden gedaan door gebruik te maken van een code style guide, een set van regels die bepalen hoe de code moet worden geschreven. Ook kan er gebruik worden gemaakt van een code linter. Dit is een tool die de code controleert op fouten en waarschuwingen.
+
+\subsection{Testen}
+
+Een ander gebied dat verbeterd kan worden, is het testen van de applicatie. Momenteel zijn er geen tests geïmplementeerd, waardoor het risico op fouten en bugs tijdens de ontwikkeling en implementatie toeneemt. Dit kan worden verbeterd door de applicatie te testen. Det toevoegen van zowel unit tests als integratietests kan de stabiliteit en betrouwbaarheid van de app vergroten. Unit tests testen individuele onderdelen van de applicatie. Integratie tests testen hoe de onderdelen van de applicatie samenwerken. Door gebruik te maken van geautomatiseerde testframeworks kan het testproces efficiënter worden gemaakt en kunnen eventuele problemen sneller worden opgespoord en verholpen. 
+
+\subsection{Documentatie}
+
+Een ander belangrijk aspect is het verbeteren van de documentatie van de Proof of Concept. 
+Momenteel ontbreekt het aan gedegen documentatie, wat het voor ontwikkelaars moeilijk kan maken om de code te begrijpen en te onderhouden. Door uitgebreide documentatie toe te voegen, inclusief overzichten van functionaliteiten, API-documentatie en codevoorbeelden, kunnen ontwikkelaars sneller aan de slag en kunnen toekomstige wijzigingen gemakkelijker worden geïmplementeerd. Dit kan worden verbeterd aan de hand van een documentatie tool. Dit is een tool die de documentatie genereert op basis van de code. Ook kan er gebruik worden gemaakt van een documentatie template. Dit is een set van regels die bepalen hoe de documentatie moet worden geschreven.
+
+Voor de backend kan er gebruik gemaakt worden van Swagger. Swagger is een tool die de documentatie genereert op basis van de code. 
+
+\subsection{Stijl}
+
+Tot slot kan de algehele stijl van de Proof of Concept worden verbeterd om een consistente en aantrekkelijke gebruikerservaring te bieden. Door gebruik te maken van een vastgestelde stijlgids, zoals de Material Design stijlgids voor Android-applicaties, kan een uniforme en professionele uitstraling worden gegarandeerd. Het consistent toepassen van kleuren, typografie en lay-outprincipes kan de herkenbaarheid van de app vergroten en gebruikers een vertrouwd gevoel geven.
+

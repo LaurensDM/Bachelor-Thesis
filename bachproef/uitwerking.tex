@@ -110,7 +110,9 @@ De mock-ups van de applicatie zijn gemaakt met behulp van moqups, een online too
     Na het ontwerp volgt de fase van ontwikkeling en implementatie. Hier wordt een Proof of Concept ontwikkeld, 
     bestaande uit zowel een online backend als een mobiele applicatie.
 
-    De code is beschikbaar op Github. De frontend \url{https://github.com/LaurensDM/RunnerApp}.
+    De code is beschikbaar op Github. 
+    De frontend \url{https://github.com/LaurensDM/RunnerApp}.
+    \vspace{2cm}
     De backend \url{https://github.com/LaurensDM/RunnerApp-API}
 
     \subsection{Frontend}
@@ -125,39 +127,68 @@ De mock-ups van de applicatie zijn gemaakt met behulp van moqups, een online too
     en gesynchroniseerd met de backend wanneer er een internetverbinding beschikbaar is.
 
     Om een route te genereren is een internetverbinding nodig, 
-    maar een gebruiker kan een bestaande route terug ophalen en bekijken zonder internetverbinding.
+    maar een gebruiker kan een bestaande route terug ophalen en bekijken zonder internetverbinding. Deze exacte route kan dan opnieuw gelopen worden. Aanpassingen aan de route kunnen enkel gebeuren met een internetverbinding.
     
     Hier is een overzicht van de verschillende schermen van de applicatie.
     
     Eerst wordt de gebruiker gevraagd om in te loggen. Hierbij wordt de gebruiker doorverwezen naar een browser waar Auth0 de authenticatie regelt.
 
-    \begin{figure}[htbp]
-        \includegraphics[width=20em]{./graphics/login.png}
-        \centering
-        \caption{Login}
-        \label{fig:login}
-    \end{figure}
+    % \begin{figure}[htbp]
+    %     \includegraphics[width=20em]{./graphics/login.png}
+    %     \centering
+    %     \caption{Login}
+    %     \label{fig:login}
+    % \end{figure}
 
     Vervolgens komt de gebruiker op het HomeScreen terecht. Voor de Proof of Concept staat hiet niet veel, 
     maar in de toekomst kan hier data van de gebruiker getoond worden.
 
-    \begin{figure}[htbp]
-        \includegraphics[width=20em]{./graphics/home.png}
-        \centering
-        \caption{Home}
-        \label{fig:home}
-    \end{figure}
+    % \begin{figure}[htbp]
+    %     \includegraphics[width=20em]{./graphics/home.png}
+    %     \centering
+    %     \caption{Home}
+    %     \label{fig:home}
+    % \end{figure}
 
     Via het drawer menu kan de gebruiker navigeren naar de verschillende schermen van de applicatie.
 
-    \begin{figure}[htbp]
-        \includegraphics[width=20em]{./graphics/drawer.png}
-        \centering
-        \caption{Drawer}
-        \label{fig:drawer}
-    \end{figure}
+    % \begin{figure}[htbp]
+    %     \includegraphics[width=20em]{./graphics/drawer.png}
+    %     \centering
+    %     \caption{Drawer}
+    %     \label{fig:drawer}
+    % \end{figure}
 
-    Op het Route scherm kan de gebruiker de opgeslagen routes bekijken en beheren.
+    Op het Route Detail scherm kan de gebruiker de opgeslagen routes bekijken en beheren. Het is mogelijk op een route te selecteren om de details te bekijken. Hierbij wordt de route opgehaald uit de lokale opslag van de mobiele applicatie. Het is hier mogelijk om een nieuwe route te genereren met dezelfde parameters als de geselecteerde route, of om de route gewoon opnieuw te lopen.
+
+    Er is een onderscheid tussen routes gebaseerd op afstand en tijd. Er is geen verschil in de route die wordt gegenereerd. Bij een route op tijd wordt de afstand berekent op basis van de loopsnelheid van de gebruiker. Deze kan ingesteld worden in de Settings van de applicatie.
+
+    % \begin{figure}[htbp]
+    %     \includegraphics[width=20em]{./graphics/routes.png}
+    %     \centering
+    %     \caption{Routes}
+    %     \label{fig:routes}
+    % \end{figure}
+
+    Er is een plus knop die de gebruiker naar het Route Create scherm brengt. Hier kan de gebruiker een route genereren op basis van specifieke parameters. Eens alle parameters zijn ingevuld, kan de gebruiker de route genereren en wordt deze doorgestuurd naar het Route scherm.
+
+    % \begin{figure}[htbp]
+    %     \includegraphics[width=20em]{./graphics/createRoute.png}
+    %     \centering
+    %     \caption{Create Route}
+    %     \label{fig:createRoute}
+    % \end{figure}
+
+    Op het Route scherm kan de gebruiker de details van de gegenereerde route bekijken. Hier kan de gebruiker ook een weerbericht opvragen voor de route. De gebruiker kan de route opslaan om later te lopen of meteen starten.
+
+    % \begin{figure}[htbp]
+    %     \includegraphics[width=20em]{./graphics/route.png}
+    %     \centering
+    %     \caption{Route}
+    %     \label{fig:route}
+    % \end{figure}
+
+    Er is ook een Settings scherm waar de gebruiker de instellingen van de applicatie kan aanpassen, zoals de loopsnelheid.
 
     \subsection{Backend}
     
@@ -173,13 +204,15 @@ De mock-ups van de applicatie zijn gemaakt met behulp van moqups, een online too
     Vervolgens wordt een functie aangeroepen die de Overpass API aanspreekt om waypoints te genereren op basis van de gegeven parameters. 
     Functies die de Overpass API en Google Maps API aanspreken zijn gedefinieerd in een helpers folder, zodat er makkelijk integraties met andere platformen kunnen worden toegevoegd. 
     Met de waypoints wordt een for-loop gestart die de afstand tussen de waypoints berekent. Ook wordt hier de hoogte van de verschillende waypoints berekent en worden waypoints gefiltert 
-    op basis van de gewenste hoogte die de gebruiker heeft gespecifieerd.
+    op basis van de gewenste hoogte die de gebruiker heeft gespecifieerd. Dit gebeurt aan de hand van de Google Maps API.
     Als de afstand tussen de waypoints groter is dan de gewenste afstand van de route,
     wordt de loop beëindigd zonder dat alle waypoints zijn inbegrepen. 
     In het geval dat er geen waypoints zijn teruggevonden, wordt een waypoint gegenereerd op basis van de locatie van de gebruiker, die zich dan op een aantal kilometers van de startlocatie bevindt. 
     De route wordt opgeslagen in de database en teruggegeven aan de frontend.
 
     \pagebreak
+
+Dit is de code die verantwoordelijk is voor het genereren van de route.
 
 \begin{lstlisting}
     async function generateRunningRoute({ startPoint, endPoint, waypoints, distance, advancedOptions }: RouteProps) {
@@ -214,4 +247,11 @@ De mock-ups van de applicatie zijn gemaakt met behulp van moqups, een online too
     }
 \end{lstlisting}
 
-    
+De getGeneratedWaypoints functie roept de Overpass API aan om waypoints te genereren op basis van de gegeven parameters. Deze functie kan aangepast worden om andere API's of platformen aan te spreken. Het geeft een lijst terug van Waypoint objecten die gebruikt worden om de route te genereren. Alle output van de API's worden omgezet naar een standaard formaat. Dit zodat de gebruikte API's makkelijk vervangen kunnen worden. Er is een types.ts file dat verantwoordelijk is voor het definiëren van de types die gebruikt worden in de applicatie.
+
+De allWaypoints variabele bevat alle gegenereerde waypoints en de waypoints die de gebruiker heeft ingegeven. De runningRouteWaypoints variabele bevat de waypoints die deel uitmaken van de route. De for-loop berekent de afstand tussen de waypoints en voegt ze toe aan de runningRouteWaypoints variabele totdat de afstand van de route de gewenste afstand bereikt. 
+
+De generateGoogleRoute functie roept de Google Maps Directions API aan om de route te genereren op basis van de waypoints. De route wordt opgeslagen in de database en teruggegeven aan de frontend. Deze functie kan vervangen worden door een andere functie die een route genereert op basis van een ander platform.
+
+In het geval dat er geen waypoints zijn teruggevonden, wordt een waypoint gegenereerd op basis van de locatie van de gebruiker, die zich dan op een aantal kilometers van de startlocatie bevindt. De route wordt opgeslagen in de database en teruggegeven aan de frontend.
+

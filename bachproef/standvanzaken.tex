@@ -98,7 +98,7 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     waarbij de enquêteresultaten ook richting geven voor verdere ontwikkelingen.
     \autocite{Novack2018}.
 
-    \section{Weather prediction}
+    \section{Weersvoorspelling}
 
     Het weer is een belangrijke factor bij het plannen van een hardlooproute. Het kan de prestaties van de loper beïnvloeden en in extreme gevallen de veiligheid in gevaar brengen.
 
@@ -277,7 +277,8 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
 
     Deze API biedt gratis toegang tot OpenStreetMap-gegevens, waaronder kaarten, routes en locatiegegevens. Echter omdat dit een gratis service is,
     zijn er beperkingen op het aantal verzoeken dat kan worden gedaan. Voor grotere hoeveelheden verzoeken is het beter om zelf een server te hosten met de OpenStreetMap-gegevens.
-    Wat extra kosten met zich meebrengt voor het hosten van de server.
+    Wat extra kosten met zich meebrengt voor het hosten van de server. \autocite{overpass_api_docs}.
+
 
     \subsection{Google Maps API}
 
@@ -285,7 +286,7 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     De kosten voor het gebruik van de Google Maps API variëren afhankelijk van het aantal verzoeken en de services die worden gebruikt.
     Google biedt een gratis tegoed van \$200 per maand, maar voor grotere hoeveelheden verzoeken kunnen extra kosten in rekening worden gebracht.
     Voor het genereren van routes is de prijs \$5 of \$10 per 1000 verzoeken, afhankelijk van de gekozen complexiteit van de route.
-    Dezelfde prijs van \$5 per 1000 verzoeken geldt voor het ophalen van de hoogtegegevens van de Google Maps API.
+    Dezelfde prijs van \$5 per 1000 verzoeken geldt voor het ophalen van de hoogtegegevens van de Google Maps API. \autocite{google_maps_api_docs}.
 
     \subsection{OpenWeatherMap API}
 
@@ -294,7 +295,7 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     OpenWeatherMap biedt een gratis abonnement met beperkte toegang tot de API, maar voor grotere hoeveelheden verzoeken kunnen extra kosten in rekening worden gebracht.
     Gratis abonnementen bieden toegang tot 60 verzoeken per minuut, 1 miljoen verzoeken per maand en 5 dagen historische gegevens.
     Het is 0.0014 euro per API call over de limiet. Voor deze applicatie is het genoeg om enkel het huidige weer op te vragen, wat binnen het gratis abonnement zit.
-
+    \autocite{openweathermap_api_docs}.
 
     \subsection{Hosting}
 
@@ -303,8 +304,8 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
     De kosten voor het hosten van een server variëren afhankelijk van de gekozen provider, de serverconfiguratie en het dataverkeer.
     Voor deze applicatie is het aan te raden om te kiezen voor een cloudprovider, omdat dit schaalbaar en kostenefficiënt is.
     Deze cloud-providers bieden verschillende prijsmodellen, waaronder pay-as-you-go en vaste prijzen.
-    Op Firebase kost het hosten van een server ongeveer \$0.026/GB voor opslag en \$0.15/GB voor data traffic.
-    Bij Google Cloud kost het \$3.00 per miljoen API calls, wanneer er tussen 2 miljoen  en 1 miljard API calls per maand zijn.
+    Op Firebase kost het hosten van een server ongeveer \$0.026/GB voor opslag en \$0.15/GB voor data traffic \textcite{firebase_docs}.
+    Bij Google Cloud kost het \$3.00 per miljoen API calls, wanneer er tussen 2 miljoen  en 1 miljard API calls per maand zijn \textcite{google_cloud_docs}.
     Voor AWS is de prijsstructuur als volgt:
     \begin{table}[h]
         \centering
@@ -321,7 +322,9 @@ Deze sectie, over de huidige stand van zaken, onderzoekt de integratie van onlin
         \caption{Prijsstructuur}
         \label{tab:prijsstructuur}
     \end{table}
+    \textcite{aws_docs}.
 
+    Omdat de kosten voor het hosten van een server afhankelijk zijn van verschillende factoren, zal er vooral gefocused worden op de kosten van het gebruik van de verschillende API's.
 
 
 

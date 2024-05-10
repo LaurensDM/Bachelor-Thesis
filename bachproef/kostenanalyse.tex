@@ -1,0 +1,67 @@
+\chapter{\IfLanguageName{dutch}{Kostenanalyse}{Cost analyses}}%
+\label{ch:kostenanalyse}
+
+In dit hoofdstuk wordt een kostenanalyse uitgevoerd voor de ontwikkeling en het onderhoud van de Proof of Concept.
+
+\section{Kosten voor het publiceren van de Proof of Concept}%
+
+De kosten voor de publicatie van de Proof of Concept zijn afhankelijk van het platform waarop de applicatie wordt gepubliceerd. In dit geval wordt de applicatie gepubliceerd op zowel de Google Play Store als de Apple App Store. Beide platformen hanteren eenmalige kosten voor het publiceren van een applicatie.
+
+De backend moet ook worden gehost op een server. De kosten voor het hosten van de backend zijn afhankelijk van de gekozen hostingprovider en het gekozen hostingplan. 
+
+Aangezien deze kosten zeer variabel zijn en afhangen van de manier waarop de applicatie wordt gepubliceerd en gehost, is het moeilijk om een exact bedrag vast te stellen. Dus zal dit onderdeel van de kostenanalyse worden uitgesloten.
+
+\section{Kosten voor de tools van de Proof of Concept}%
+
+De Proof of Concept maakt gebruik van verschillende tools en services om de functionaliteit van de applicatie te ondersteunen. Deze tools en services hebben elk hun eigen kostenstructuur.
+
+\subsection{Google Maps API}%
+
+De Google Maps API is een belangrijk onderdeel van de Proof of Concept, omdat het de mogelijkheid biedt om kaarten en locatiegegevens te integreren in de applicatie. De Google Maps API hanteert een pay-as-you-go model, waarbij de kosten afhankelijk zijn van het gebruik van de API.
+
+De kosten voor het gebruik van de Google Maps API zijn als volgt:
+
+\begin{itemize}
+    \item \$5 per 1000 routeberekeningen
+    \item \$0,50 per 1000 geocodingverzoeken
+\end{itemize}
+
+Er wordt gratis \$200 aan credits gegeven per maand. 
+Dus kunnen er 40.000 routeberekeningen per maand worden gedaan.
+
+De kosten voor het gebruik van de Google Maps API kunnen variëren afhankelijk van het aantal gebruikers en het gebruik van de applicatie. Voor de Proof of Concept zijn de kosten voor het gebruik van de Google Maps API echter verwaarloosbaar, omdat het aantal gebruikers en het gebruik van de applicatie beperkt is.
+
+\subsection{Overpass API}%
+
+De Overpass API is een open-source API die wordt gebruikt om gegevens over OpenStreetMap te extraheren. De Overpass API is gratis te gebruiken en er zijn geen kosten verbonden aan het gebruik ervan.
+
+Echter is het belangrijk om te vermelden dat de Overpass API een limiet heeft op het aantal verzoeken dat per dag kan worden gedaan. Als deze limiet wordt overschreden, kan de toegang tot de API worden geblokkeerd. Deze limiet is ongeveer 10.000 verzoeken per dag en downloads minder dan 1 GB per dag. Voor de Proof of Concept zijn deze limieten echter niet relevant, omdat het aantal verzoeken dat wordt gedaan binnen deze limieten valt. Om meer verzoeken te kunnen doen, kan er een eigen Overpass API server worden opgezet. Deze kosten zijn echter niet meegenomen in deze kostenanalyse.
+
+\subsection{OpenWeatherMap API}%
+
+De OpenWeatherMap API is een open-source API die wordt gebruikt om weergegevens te integreren in de applicatie. De OpenWeatherMap API hanteert een freemium model, waarbij een gratis abonnement beschikbaar is met beperkte functionaliteit en een betaald abonnement met meer geavanceerde functies. 
+
+Het gratis abonnement van de OpenWeatherMap API biedt de volgende functies:
+
+\begin{itemize}
+    \item 60 verzoeken per minuut
+    \item 1 miljoen verzoeken per maand
+    \item 5-daagse weersvoorspelling
+    \item Huidige weersomstandigheden
+\end{itemize}
+
+Voor de Proof of Concept zijn de kosten voor het gebruik van de OpenWeatherMap API echter verwaarloosbaar, omdat het aantal verzoeken dat wordt gedaan binnen de limieten van het gratis abonnement valt. Ook de extra functies van het betaalde abonnement zijn niet nodig. Voor meer gebruikers kan het echter nodig zijn om over te schakelen naar een betaald abonnement.  Het is 0.0014 euro per API call over de limiet.
+
+\subsection*{Auth0}
+
+Auth0 is een tool die wordt gebruikt voor authenticatie en autorisatie in de Proof of Concept. Auth0 hanteert een freemium model, waarbij een gratis abonnement beschikbaar is met beperkte functionaliteit en een betaald abonnement met meer geavanceerde functies.
+
+Met dit gratis abonnement kunnen er 7500 actieve gebruikers per maand worden geregistreerd. Voor de Proof of Concept zijn de kosten voor het gebruik van Auth0 echter verwaarloosbaar, omdat het aantal gebruikers en het gebruik van de applicatie beperkt is. Voor meer gebruikers kan het echter nodig zijn om over te schakelen naar een betaald abonnement.
+
+\section{Conclusie}%
+
+De kosten voor de publicatie van de Proof of Concept zijn afhankelijk van het platform waarop de applicatie wordt gepubliceerd en de hostingprovider die wordt gebruikt voor de backend. De kosten voor de tools en services die worden gebruikt in de Proof of Concept zijn verwaarloosbaar, omdat het aantal gebruikers en het gebruik van de applicatie beperkt is. Voor meer gebruikers kunnen de kosten echter toenemen en kan het nodig zijn om over te schakelen naar betaalde abonnementen voor de tools en services die worden gebruikt.
+
+De applicatie is gratis tot 40.000 routeberekeningen per maand. Verder kunnen er maximaal 1 miljoen verzoeken per maand worden gedaan voor een weerbericht op te halen. Als deze limieten worden overschreden, kunnen er extra kosten in rekening worden gebracht. Er is een maximum van 7500 actieve gebruikers.
+
+
