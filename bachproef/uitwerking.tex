@@ -144,52 +144,67 @@ De mock-ups van de applicatie zijn gemaakt met behulp van moqups, een online too
     Vervolgens komt de gebruiker op het Home Scherm terecht. Voor de Proof of Concept staat hiet niet veel, 
     maar in de toekomst kan hier data van de gebruiker getoond worden.
 
-    % \begin{figure}[htbp]
-    %     \includegraphics[width=20em]{./graphics/home.png}
-    %     \centering
-    %     \caption{Home}
-    %     \label{fig:home}
-    % \end{figure}
+    \begin{figure}[htbp]
+        \includegraphics[width=20em]{./graphics/home.png}
+        \centering
+        \caption{Home}
+        \label{fig:home}
+    \end{figure}
 
     Via het drawer menu kan de gebruiker navigeren naar de verschillende schermen van de applicatie.
 
-    % \begin{figure}[htbp]
-    %     \includegraphics[width=20em]{./graphics/drawer.png}
-    %     \centering
-    %     \caption{Drawer}
-    %     \label{fig:drawer}
-    % \end{figure}
+    \begin{figure}[htbp]
+        \includegraphics[width=20em]{./graphics/drawer.png}
+        \centering
+        \caption{Drawer}
+        \label{fig:drawer}
+    \end{figure}
 
     Op het Route Overzicht scherm kan de gebruiker de opgeslagen routes bekijken en beheren. Het is mogelijk op een route te selecteren om de details te bekijken. Hierbij wordt de route opgehaald uit de lokale opslag van de mobiele applicatie. Het is hier mogelijk om een nieuwe route te genereren met dezelfde parameters als de geselecteerde route, of om de route gewoon opnieuw te lopen.
 
     Er is een onderscheid tussen routes gebaseerd op afstand en tijd. Er is geen verschil in de route die wordt gegenereerd. Bij een route op tijd wordt de afstand berekent op basis van de loopsnelheid van de gebruiker. Deze kan ingesteld worden in de Settings van de applicatie.
 
-    % \begin{figure}[htbp]
-    %     \includegraphics[width=20em]{./graphics/routes.png}
-    %     \centering
-    %     \caption{Routes}
-    %     \label{fig:routes}
-    % \end{figure}
+    \begin{figure}[htbp]
+        \includegraphics[width=20em]{./graphics/routes.png}
+        \centering
+        \caption{Routes}
+        \label{fig:routes}
+    \end{figure}
 
     Er is een plus knop die de gebruiker naar het Route Creatie scherm brengt. Hier kan de gebruiker een route genereren op basis van specifieke parameters. Eens alle parameters zijn ingevuld, kan de gebruiker de route genereren en wordt deze doorgestuurd naar het Route scherm.
 
-    % \begin{figure}[htbp]
-    %     \includegraphics[width=20em]{./graphics/createRoute.png}
-    %     \centering
-    %     \caption{Create Route}
-    %     \label{fig:createRoute}
-    % \end{figure}
+    \begin{figure}[htbp]
+        \includegraphics[width=20em]{./graphics/create.png}
+        \centering
+        \caption{Create Route}
+        \label{fig:createRoute}
+    \end{figure}
 
     Op het Route scherm kan de gebruiker de details van de gegenereerde route bekijken. Hier kan de gebruiker ook een weerbericht opvragen voor de route. De gebruiker kan de route opslaan om later te lopen of meteen starten.
 
-    % \begin{figure}[htbp]
-    %     \includegraphics[width=20em]{./graphics/route.png}
-    %     \centering
-    %     \caption{Route}
-    %     \label{fig:route}
-    % \end{figure}
+    \begin{figure}[htbp]
+        \includegraphics[width=20em]{./graphics/route.png}
+        \centering
+        \caption{Route}
+        \label{fig:route}
+    \end{figure}
 
-    Er is ook een Settings scherm waar de gebruiker de instellingen van de applicatie kan aanpassen, zoals de loopsnelheid.
+    \begin{figure}[htbp]
+        \includegraphics[width=20em]{./graphics/weather.png}
+        \centering
+        \caption{Weer}
+        \label{fig:weather}
+    \end{figure}
+
+    Er is ook een instellingen scherm waar de gebruiker de instellingen van de applicatie kan aanpassen, zoals de loopsnelheid.
+
+    \begin{figure}[htbp]
+        \includegraphics[width=20em]{./graphics/settings.png}
+        \centering
+        \caption{Instellingen}
+        \label{fig:settings}
+    \end{figure}
+
 
     \subsection{Backend}
     
@@ -209,7 +224,7 @@ De mock-ups van de applicatie zijn gemaakt met behulp van moqups, een online too
     Als de afstand tussen de waypoints groter is dan de gewenste afstand van de route,
     wordt de loop beëindigd zonder dat alle waypoints zijn inbegrepen. 
     In het geval dat er geen waypoints zijn teruggevonden, wordt een waypoint gegenereerd op basis van de locatie van de gebruiker, die zich dan op een aantal kilometers van de startlocatie bevindt. 
-    De route wordt opgeslagen in de database en teruggegeven aan de frontend.
+    De route wordt teruggegeven aan de frontend.
 
     \pagebreak
 
@@ -319,24 +334,19 @@ Dit is de code die verantwoordelijk is voor het genereren van de route.
 }
 \end{lstlisting}
 
-% De getGeneratedWaypoints functie roept de Overpass API aan om waypoints te genereren op basis van de gegeven parameters. Deze functie kan aangepast worden om andere API's of platformen aan te spreken. Het geeft een lijst terug van Waypoint objecten die gebruikt worden om de route te genereren. Alle output van de API's worden omgezet naar een standaard formaat. Dit zodat de gebruikte API's makkelijk vervangen kunnen worden. Er is een types.ts file dat verantwoordelijk is voor het definiëren van de types die gebruikt worden in de applicatie.
-
-% De allWaypoints variabele bevat alle gegenereerde waypoints en de waypoints die de gebruiker heeft ingegeven. De runningRouteWaypoints variabele bevat de waypoints die deel uitmaken van de route. De for-loop berekent de afstand tussen de waypoints en voegt ze toe aan de runningRouteWaypoints variabele totdat de afstand van de route de gewenste afstand bereikt. 
-
-% De generateGoogleRoute functie roept de Google Maps Directions API aan om de route te genereren op basis van de waypoints. De route wordt opgeslagen in de database en teruggegeven aan de frontend. Deze functie kan vervangen worden door een andere functie die een route genereert op basis van een ander platform.
-
-% In het geval dat er geen waypoints zijn teruggevonden, wordt een waypoint gegenereerd op basis van de locatie van de gebruiker, die zich dan op een aantal kilometers van de startlocatie bevindt. De route wordt opgeslagen in de database en teruggegeven aan de frontend.
-
-Deze functie genereert een hardlooproute op basis van een aantal parameters. Deze parameters zijn onder andere een startpunt, een eindpunt, tussenpunten, de afstand van de route en geavanceerde opties.
-
-De functie begint met het ophalen van gegenereerde tussenpunten met behulp van de getGeneratedWaypoints functie. Deze gegenereerde tussenpunten worden vervolgens gesorteerd op basis van hun afstand tot het startpunt. De afstand wordt berekend met behulp van de calculateDistance functie.
-
-Vervolgens wordt de hoogte van de route berekend met behulp van de calculateElevation functie. Er wordt gekeken naar het hoogteverschil tussen de verschillende tussenpunten en op basis daarvan worden de tussenpunten gefilterd. Dit wordt gedaan op basis van de geavanceerde opties die zijn meegegeven.
-
-De gefilterde tussenpunten worden toegevoegd aan de lijst met alle tussenpunten. Als er geen tussenpunten zijn gegenereerd, worden er nieuwe tussenpunten gecreëerd door middel van de findNextPoint functie. Deze functie zoekt naar het volgende punt langs de route en voegt dit toe aan de lijst met tussenpunten. Dit wordt herhaald totdat de totale afstand van de route overeenkomt met de gewenste afstand.
-
-Als er wel tussenpunten zijn, dan worden deze toegevoegd aan de lijst met tussenpunten. Er wordt gekeken naar de afstand tussen de tussenpunten en of deze afstand past binnen de gewenste afstand van de route. Als de afstand tussen twee tussenpunten te groot is, wordt deze tussenpunt niet toegevoegd aan de lijst.
-
+Deze functie genereert een hardlooproute op basis van een aantal parameters. Waaronder een startpunt, een eindpunt, tussenpunten, de afstand van de route en geavanceerde opties.
+De functie begint met het ophalen van gegenereerde tussenpunten met behulp van de getGeneratedWaypoints functie. Deze functie roept de Overpass API aan en genereert tussenpunten op basis van de gegeven parameters.
+Er worden maximum 50 tussenpunten gegenereerd per parameter.
+Deze gegenereerde tussenpunten worden vervolgens gesorteerd op basis van hun afstand tot het startpunt. De afstand wordt berekend met behulp van de calculateDistance functie.
+Vervolgens wordt de hoogte van de route berekend met behulp van de calculateElevation functie. Deze functie roept de Google Maps Elevation API aan en berekent de hoogte van de verschillende tussenpunten. 
+Hieraan worden enkel 510 tussenpunten meegegeven, omdat de Google Maps Elevation API een limiet heeft van 512 punten per aanvraag.
+Er wordt gekeken naar het hoogteverschil tussen de verschillende tussenpunten en op basis daarvan worden de tussenpunten gefilterd. Dit wordt gedaan op basis van de geavanceerde opties die zijn meegegeven.
+De gefilterde tussenpunten worden toegevoegd aan de lijst met alle tussenpunten. Als er geen tussenpunten zijn gegenereerd, worden er nieuwe tussenpunten gecreëerd door middel van de findNextPoint functie. 
+Deze functie zoekt naar het volgende punt langs de route en voegt dit toe aan de lijst met tussenpunten. In totaal worden 4 tussenpunten gegenereerd die verspreid zijn in een radius die gelijk is aan de afstand van de route.
+Dit wordt herhaald totdat de totale afstand van de route overeenkomt met de gewenste afstand of tot er 4 tussenpunten berekent zijn.
+Als er wel tussenpunten zijn, dan worden deze toegevoegd aan de lijst met tussenpunten. Er wordt gekeken naar de afstand tussen de tussenpunten en of deze afstand past binnen de gewenste afstand van de route. 
+Als de afstand tussen twee tussenpunten te groot is, wordt deze tussenpunt niet toegevoegd aan de lijst.
 Er mag maximaal gebruik worden gemaakt van 25 tussenpunten in een enkele aanvraag. Als er meer tussenpunten zijn dan dit, dan worden alleen de eerste 25 tussenpunten gebruikt.
-
-Als de lijst met tussenpunten compleet is, dan wordt er met behulp van de Google Maps Directions API een route gegenereerd. Deze route wordt teruggegeven als resultaat van de functie. Als er een fout optreedt bij het ophalen van de route, dan wordt er null teruggegeven.
+Dit is de limiet van de Google Maps Directions API.
+Als de lijst met tussenpunten compleet is, dan wordt er met behulp van de Google Maps Directions API een route gegenereerd. 
+Deze route wordt teruggegeven als resultaat van de functie. Als er een fout optreedt bij het ophalen van de route, dan wordt er null teruggegeven.
